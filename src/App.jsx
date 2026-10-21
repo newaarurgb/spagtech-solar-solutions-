@@ -24,6 +24,7 @@ import {
 
 import "./App.css";
 import FAQ from "./FAQ";
+import SolarImpact from "./components/SolarImpact";
 
 import logoImage from "./components/images/logo.png";
 
@@ -487,6 +488,8 @@ const heroImages = [
             </div>
           </div>
         </section>
+
+        <SolarImpact />
 
         {/* Welcome strip */}
         <section className="solar-welcome-strip">

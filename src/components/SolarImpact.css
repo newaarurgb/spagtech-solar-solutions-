@@ -1,0 +1,447 @@
+
+.solar-impact {
+  --solar-green: #276749;
+  --solar-deep-green: #174b35;
+  --solar-lime: #9bcf53;
+  --solar-text: #183b2b;
+  --solar-muted: #607467;
+  --solar-cream: #f6f8ef;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  padding: 88px 5.5%;
+  color: var(--solar-text);
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(189, 224, 155, 0.48),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 95% 90%,
+      rgba(245, 224, 157, 0.42),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #f8faf2, #edf5e8 55%, #fffaf0);
+}
+
+/* Soft natural sunlight */
+.impact-background-glow {
+  position: absolute;
+  z-index: -1;
+  top: -150px;
+  right: -90px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255, 224, 126, 0.2);
+  filter: blur(30px);
+}
+
+/* Delicate leaf-like rings */
+.impact-decoration {
+  position: absolute;
+  z-index: -1;
+  width: 270px;
+  height: 360px;
+  border: 1px solid rgba(39, 103, 73, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: rotate(-35deg);
+}
+
+.impact-decoration-one {
+  top: -180px;
+  left: -160px;
+  box-shadow:
+    0 0 0 25px rgba(39, 103, 73, 0.025),
+    0 0 0 55px rgba(39, 103, 73, 0.02);
+}
+
+.impact-decoration-two {
+  right: -180px;
+  bottom: -230px;
+  width: 340px;
+  height: 440px;
+  transform: rotate(35deg);
+}
+
+/* Subtle sunlight sweep */
+.solar-impact::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -40%;
+  width: 35%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(155, 207, 83, 0.85),
+    transparent
+  );
+  animation: impact-energy-line 10s linear infinite;
+  pointer-events: none;
+}
+
+.solar-impact-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.impact-heading {
+  max-width: 790px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.impact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 19px;
+  color: var(--solar-green);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.impact-eyebrow svg {
+  color: #6e9d36;
+}
+
+.impact-heading h2 {
+  margin: 0;
+  color: var(--solar-deep-green);
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-weight: 850;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+}
+
+.impact-heading h2 span {
+  color: #639b36;
+  text-shadow: none;
+}
+
+.impact-intro {
+  max-width: 650px;
+  margin: 19px auto 0;
+  color: #526b5a;
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+/* Statistic cards */
+.solar-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.solar-impact-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 300px;
+  padding: 31px;
+  overflow: hidden;
+
+  border: 1px solid rgba(39, 103, 73, 0.13);
+  border-radius: 21px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 12px 30px rgba(42, 81, 53, 0.07),
+    0 2px 6px rgba(42, 81, 53, 0.035);
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease,
+    border-color 300ms ease;
+}
+
+.solar-impact.is-visible .solar-impact-card {
+  animation: impact-card-reveal 650ms ease forwards;
+  animation-delay: calc(var(--card-index) * 120ms);
+}
+
+/* Natural green corner wash */
+.solar-impact-card::before {
+  content: "";
+  position: absolute;
+  top: -90px;
+  right: -75px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(180, 216, 142, 0.22);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.solar-impact-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  right: 25px;
+  height: 3px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(
+    90deg,
+    #4c8b50,
+    #b8d96e,
+    #e0d78b
+  );
+}
+
+.solar-impact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(67, 132, 75, 0.34);
+  box-shadow:
+    0 20px 42px rgba(42, 81, 53, 0.12),
+    0 5px 12px rgba(42, 81, 53, 0.04);
+}
+
+.impact-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 31px;
+}
+
+.impact-icon {
+  display: grid;
+  width: 53px;
+  height: 53px;
+  place-items: center;
+  color: #387448;
+  border: 1px solid #d8e9cd;
+  border-radius: 16px;
+  background: #edf6e7;
+  transition:
+    color 300ms ease,
+    background 300ms ease;
+}
+
+.solar-impact-card:hover .impact-icon {
+  color: #fff;
+  background: #387448;
+}
+
+.impact-arrow {
+  color: #699749;
+  transition: transform 300ms ease;
+}
+
+.solar-impact-card:hover .impact-arrow {
+  transform: translate(3px, -3px);
+}
+
+.impact-value {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px;
+  margin-bottom: 15px;
+
+  color: #397747;
+  font-size: clamp(2.4rem, 3.2vw, 3.25rem);
+  font-weight: 850;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  font-variant-numeric: tabular-nums;
+  text-shadow: none;
+}
+
+.impact-suffix {
+  font-size: 0.72em;
+  letter-spacing: -0.03em;
+}
+
+.solar-impact-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 9px;
+  color: #203f2d;
+  font-size: 1.06rem;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.solar-impact-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #637469;
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+.impact-card-bottom {
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.impact-card-bottom span {
+  display: block;
+  width: 45px;
+  height: 4px;
+  border-radius: 99px;
+  background: #83b64b;
+  transition: width 300ms ease;
+}
+
+.solar-impact-card:hover .impact-card-bottom span {
+  width: 75px;
+}
+
+/* Footer tagline */
+.impact-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+  color: #5b7562;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.impact-footer-line {
+  width: 32px;
+  height: 1px;
+  background: #a6c392;
+}
+
+.impact-footer-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #7ba84d;
+}
+
+/* Animations */
+@keyframes impact-card-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes impact-energy-line {
+  from {
+    left: -40%;
+  }
+
+  to {
+    left: 110%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 950px) {
+  .solar-impact {
+    padding: 75px 5%;
+  }
+
+  .solar-impact-grid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
+    gap: 18px;
+  }
+
+  .solar-impact-card {
+    min-height: 260px;
+    padding: 28px;
+  }
+
+  .impact-card-top {
+    margin-bottom: 24px;
+  }
+
+  .impact-heading {
+    margin-bottom: 38px;
+  }
+
+  .impact-value {
+    font-size: 2.8rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .solar-impact {
+    padding: 60px 19px;
+  }
+
+  .impact-heading h2 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .impact-intro {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .impact-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+  }
+
+  .solar-impact-card {
+    min-height: 245px;
+    padding: 24px;
+    border-radius: 19px;
+  }
+
+  .impact-value {
+    font-size: 2.65rem;
+  }
+
+  .impact-footer {
+    gap: 7px;
+    font-size: 0.75rem;
+  }
+
+  .impact-footer-line {
+    width: 13px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .solar-impact::before {
+    animation: none;
+  }
+
+  .solar-impact *,
+  .solar-impact *::before,
+  .solar-impact *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .solar-impact-card {
+    opacity: 1;
+    transform: none;
+  }
+}

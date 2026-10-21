@@ -3,6 +3,7 @@ import { Sun, ArrowUpRight, MessageCircle, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./SiteFooter.css";
 import { Clock } from "lucide-react";
+import logoImage from "./images/logo.png";
 
 
 const whatsappLink =
@@ -21,7 +22,7 @@ export default function SiteFooter() {
 <div className="footer-brand">
   <div className="footer-logo-frame">
     <img
-      src="/images/logo.png"
+      src={logoImage}
       alt="SPAGTECH Solar Installation"
       className="footer-logo"
     />

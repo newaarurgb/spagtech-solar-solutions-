@@ -4,7 +4,6 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./ServiceAreasMap.css";
 
-
 const serviceAreas = [
   { name: "Kolathur", position: [13.124, 80.213] },
   { name: "Perambur", position: [13.118, 80.233] },
@@ -30,8 +29,16 @@ const serviceAreas = [
   { name: "Pallikaranai", position: [12.938, 80.209] },
   { name: "Keelkattalai", position: [12.956, 80.185] },
   { name: "Madipakkam", position: [12.962, 80.198] },
-];
 
+  // Additional service areas
+  { name: "Padappai", position: [12.889, 80.027] },
+  { name: "Mannivakkam", position: [12.897, 80.062] },
+  { name: "Salayur", position: [12.900, 80.155] },
+  { name: "Sittalapakkam", position: [12.887, 80.169] },
+  { name: "Chitlapakkam", position: [12.930, 80.146] },
+  { name: "Thiruvallur", position: [13.144, 79.908] },
+  { name: "Navalur", position: [12.845, 80.226] },
+];
 
 const spagtechIcon = L.divIcon({
   className: "spagtech-map-icon",
@@ -69,15 +76,19 @@ const spagtechIcon = L.divIcon({
   popupAnchor: [0, -44],
 });
 
-
 export default function ServiceAreasMap() {
   return (
     <section className="footer-service-areas">
       <div className="service-map-heading">
-        <span className="service-map-eyebrow">OUR SERVICE NETWORK</span>
+        <span className="service-map-eyebrow">
+          OUR SERVICE NETWORK
+        </span>
+
         <h3>Powering Chennai, Area by Area.</h3>
+
         <p>
-          Explore the locations we serve across Chennai and surrounding areas.
+          Explore the locations we serve across Chennai and
+          surrounding areas.
         </p>
       </div>
 
@@ -112,17 +123,22 @@ export default function ServiceAreasMap() {
 
         <div className="service-map-areas">
           <h4>Areas We Serve</h4>
+
           <div className="service-area-tags">
             {serviceAreas.map((area) => (
-              <span key={area.name} className="service-area-tag">
+              <span
+                key={area.name}
+                className="service-area-tag"
+              >
                 <span className="service-area-dot" />
                 {area.name}
               </span>
             ))}
           </div>
+
           <p className="service-map-note">
-            Map pins indicate approximate area centres, not exact installation
-            addresses.
+            Map pins indicate approximate area centres, not exact
+            installation addresses.
           </p>
         </div>
       </div>
