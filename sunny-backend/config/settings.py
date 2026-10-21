@@ -32,12 +32,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^98z9qn3v_s8&gr@*^6pn49ukbx!(i$&r15c!xk(*d-xv9exi)'
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-local-development-only")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+
+render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if render_host:
+    ALLOWED_HOSTS.append(render_host)
 
 
 # Application definition
@@ -131,11 +136,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+cors_origins = os.environ.get("CORS_ALLOWED_ORIGINS", "")
 
+CORS_ALLOWED_ORIGINS = [
+    origin.strip().rstrip("/")
+    for origin in cors_origins.split(",")
+    if origin.strip()
+]
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
