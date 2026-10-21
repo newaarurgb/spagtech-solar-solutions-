@@ -42,25 +42,25 @@ function App() {
   // Portfolio projects
   const projects = [
     {
-      image: "../images/project1.jpg",
+      image: "./components/images/project1.jpg",
       title: "Residential Solar",
       category: "Residential",
       description: "Solar solutions for homes and rooftops.",
     },
     {
-      image: "../images/project2.jpg",
+      image: "./components/images/project2.jpg",
       title: "Commercial Solar",
       category: "Commercial",
       description: "Solar energy solutions for business properties.",
     },
     {
-      image: "../images/project3.jpg",
+      image: "./components/images/project3.jpg",
       title: "Solar Installation",
       category: "Installation",
       description: "Solar panels installed for energy generation.",
     },
     {
-      image: "../images/project4.jpg",
+      image: "./components/images/project4.jpg",
       title: "Rooftop Solar",
       category: "Residential",
       description: "Make use of available rooftop space.",
@@ -77,25 +77,25 @@ function App() {
   // Hero image slider
   const heroImages = [
     {
-      src: "./images/hero-solar.jpg",
+      src: "./components/images/hero-solar.jpg",
       title: "Clean energy. Brighter future.",
       description:
         "Discover smarter solar solutions for your property.",
     },
     {
-      src: "../images/solar-rooftop.jpg",
+      src: "./components/images/solar-rooftop.jpg",
       title: "Make every rooftop count.",
       description:
         "Turn sunlight into energy for your everyday needs.",
     },
     {
-      src: "../images/solar-installation.jpg",
+      src: "./components/images/solar-installation.jpg",
       title: "Power your world with solar.",
       description:
         "Explore solar solutions designed around your requirements.",
     },
     {
-      src: "../images/solar-panels.jpg",
+      src: "./components/images/solar-panels.jpg",
       title: "A better way to power tomorrow.",
       description:
         "Take a step towards cleaner, more sustainable energy.",
@@ -270,7 +270,7 @@ function App() {
         >
           <img
             className="brand-logo"
-            src="/images/logo.png"
+            src="./components/images/logo.png"
             alt="SPAGTECH logo"
           />
 

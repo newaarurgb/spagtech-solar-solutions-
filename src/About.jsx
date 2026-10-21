@@ -123,7 +123,7 @@ export default function About() {
 
         <div className="about-hero-image about-reveal">
           <img
-            src="../images/about-solar.jpg"
+            src="./components/images/about-solar.jpg"
             alt="Solar installation project"
           />
           <div className="about-image-caption">
@@ -280,7 +280,7 @@ export default function About() {
       <section className="about-story section-padding">
         <div className="about-story-image about-reveal">
           <img
-            src="/images/solar-installation.jpg"
+            src="./components/images/solar-installation.jpg"
             alt="Solar panels at an installation site"
             loading="lazy"
           />
@@ -373,7 +373,7 @@ export default function About() {
         <div className="about-gallery-grid">
           <figure className="about-gallery-item about-reveal">
             <img
-              src="/images/project1.jpg"
+              src="./components/images/project1.jpg"
               alt="Solar project photograph one"
               loading="lazy"
             />
@@ -381,7 +381,7 @@ export default function About() {
           </figure>
           <figure className="about-gallery-item about-reveal">
             <img
-              src="/images/project2.jpg"
+              src="./components/images/project2.jpg"
               alt="Solar project photograph two"
               loading="lazy"
             />
@@ -389,7 +389,7 @@ export default function About() {
           </figure>
           <figure className="about-gallery-item about-reveal">
             <img
-              src="/images/project3.jpg"
+              src="./components/images/project3.jpg"
               alt="Solar project photograph three"
               loading="lazy"
             />
@@ -397,7 +397,7 @@ export default function About() {
           </figure>
           <figure className="about-gallery-item about-reveal">
             <img
-              src="/images/project4.jpg"
+              src="./components/images/project4.jpg"
               alt="Solar project photograph four"
               loading="lazy"
             />
