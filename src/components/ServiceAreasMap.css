@@ -1,0 +1,283 @@
+
+/* SPAGTECH — footer service-area map */
+
+.footer-service-areas {
+  width: 100%;
+  min-width: 0;
+  padding: 42px 0;
+  color: #f4f8f4;
+}
+
+.service-map-heading {
+  margin-bottom: 24px;
+}
+
+.service-map-eyebrow {
+  color: #c8f169;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.service-map-heading h3 {
+  margin: 10px 0;
+  color: #ffffff;
+  font-size: clamp(23px, 3vw, 34px);
+  line-height: 1.2;
+}
+
+.service-map-heading p {
+  max-width: 600px;
+  margin: 0;
+  color: #c2d4c8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.service-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.8fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.service-map {
+  height: 390px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(200, 241, 105, 0.4);
+  border-radius: 18px;
+  background: #e8efe8;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.service-map-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.service-map-areas {
+  min-width: 0;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(200, 241, 105, 0.17);
+  border-radius: 18px;
+}
+
+.service-map-areas h4 {
+  margin: 0 0 18px;
+  color: #c8f169;
+  font-size: 18px;
+}
+
+.service-area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.service-area-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  color: #f0f6f1;
+  background: rgba(255, 255, 255, 0.065);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.service-area-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  background: #c8f169;
+  border-radius: 50%;
+}
+
+.service-map-note {
+  margin: 18px 0 0;
+  color: #a9c0b0;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Custom cap marker */
+.spagtech-map-icon {
+  background: transparent;
+  border: none;
+}
+
+.spagtech-map-pin {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: #103d2b;
+  border: 2px solid #c8f169;
+  border-radius: 50% 50% 50% 8px;
+  box-shadow: 0 4px 12px rgba(16, 61, 43, 0.35);
+  transform: rotate(-45deg);
+}
+
+.spagtech-cap {
+  display: block;
+  font-size: 19px;
+  line-height: 1;
+  transform: rotate(45deg);
+}
+
+.spagtech-cap-letter {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  color: #103d2b;
+  background: #c8f169;
+  border: 1px solid #103d2b;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 900;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 900px) {
+  .service-map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-map {
+    height: 340px;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-service-areas {
+    padding: 30px 0;
+  }
+
+  .service-map {
+    height: 300px;
+    border-radius: 13px;
+  }
+
+  .service-map-areas {
+    padding: 16px;
+  }
+
+  .service-area-tag {
+    font-size: 11px;
+    padding: 7px 9px;
+  }
+}
+
+
+/* =========================================
+   SERVICE MAP — READABILITY FIX
+========================================= */
+
+.service-map-heading h3 {
+  color: #123d2a !important;
+  font-weight: 800;
+}
+
+.service-map-heading p {
+  color: #3f5c4a !important;
+}
+
+.service-map-eyebrow {
+  color: #397b32 !important;
+}
+
+.service-map-areas {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid #d8e8d3 !important;
+  box-shadow: 0 10px 28px rgba(16, 61, 43, 0.08);
+}
+
+.service-map-areas h4 {
+  color: #174b31 !important;
+  font-weight: 800;
+}
+
+.service-area-tag {
+  color: #214b32 !important;
+  background: #f0f7eb !important;
+  border: 1px solid #d9e9d0 !important;
+  font-weight: 600;
+}
+
+.service-area-dot {
+  background: #398d43 !important;
+}
+
+.service-map-note {
+  color: #526b59 !important;
+}
+
+/* Everyday green cap marker */
+.spagtech-map-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.spagtech-map-pin {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: #103d2b;
+  border: 2px solid #c8f169;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(16, 61, 43, 0.35);
+}
+
+.spagtech-cap-svg {
+  display: block;
+  width: 29px;
+  height: 25px;
+  overflow: visible;
+}
+
+.spagtech-cap-letter {
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: #103d2b;
+  background: #c8f169;
+  border: 1px solid #103d2b;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+@media (max-width: 520px) {
+  .service-map-heading h3 {
+    font-size: 25px;
+  }
+
+  .service-map-heading p {
+    font-size: 13px;
+  }
+
+  .service-map-areas {
+    padding: 16px;
+  }
+}
+

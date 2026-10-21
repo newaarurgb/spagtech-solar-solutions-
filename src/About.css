@@ -1,0 +1,2270 @@
+
+/* =========================================
+   SPAGTECH SOLAR INSTALLATION
+   Complete About Page Styles
+========================================= */
+
+.about-page {
+  --about-green: #28743a;
+  --about-dark: #153c25;
+  --about-muted: #667568;
+  --about-light: #f5f8f3;
+  color: #183b25;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.about-page * {
+  box-sizing: border-box;
+}
+
+.about-page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  padding: 85px max(6%, calc((100% - 1200px) / 2));
+  background: linear-gradient(135deg, #f6faf3, #ffffff 65%);
+}
+
+.about-hero-content {
+  max-width: 570px;
+}
+
+.about-tag {
+  display: inline-block;
+  color: var(--about-green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.about-hero h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  margin: 0 0 22px;
+  color: var(--about-dark);
+}
+
+.about-hero h1 span,
+.about-story h2 span,
+.about-section-heading h2 span {
+  color: var(--about-green);
+}
+
+.about-hero-content > p,
+.about-story-content > p,
+.about-section-heading > p,
+.about-cta p {
+  color: var(--about-muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.about-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 15px 23px;
+  border-radius: 8px;
+  background: var(--about-green);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.about-primary-btn:hover {
+  background: var(--about-dark);
+  transform: translateY(-3px);
+}
+
+.about-hero-image {
+  position: relative;
+  height: 430px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 65px rgba(22, 66, 35, 0.15);
+}
+
+.about-image-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  color: white;
+  background: rgba(19, 52, 31, 0.82);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+
+/* =========================================
+   CARTOON SOLAR MASCOT
+========================================= */
+
+.solar-mascot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+  margin-bottom: 28px;
+  animation: mascot-entrance 0.9s ease-out both;
+}
+
+.mascot-sun {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  animation: mascot-float 3s ease-in-out infinite;
+}
+
+.mascot-rays {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    #f5b82e 0deg 10deg,
+    transparent 10deg 30deg
+  );
+  animation: mascot-spin 35s linear infinite;
+}
+
+.mascot-face {
+  position: relative;
+  z-index: 1;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffe778, #ffbd36);
+  box-shadow: inset -5px -6px 0 rgba(215, 136, 14, 0.12);
+}
+
+.mascot-eye {
+  position: absolute;
+  top: 27px;
+  width: 6px;
+  height: 9px;
+  background: #49391f;
+  border-radius: 50%;
+  animation: mascot-blink 4s infinite;
+}
+
+.eye-left {
+  left: 21px;
+}
+
+.eye-right {
+  right: 21px;
+}
+
+.mascot-smile {
+  position: absolute;
+  left: 27px;
+  top: 37px;
+  width: 18px;
+  height: 10px;
+  border-bottom: 3px solid #49391f;
+  border-radius: 0 0 20px 20px;
+}
+
+.mascot-cheek {
+  position: absolute;
+  top: 40px;
+  width: 10px;
+  height: 5px;
+  border-radius: 50%;
+  background: #f58d68;
+  opacity: 0.8;
+}
+
+.cheek-left {
+  left: 9px;
+}
+
+.cheek-right {
+  right: 9px;
+}
+
+.mascot-arm {
+  position: absolute;
+  z-index: 2;
+  top: 56px;
+  width: 21px;
+  height: 7px;
+  border-radius: 8px;
+  background: #f5b82e;
+}
+
+.arm-left {
+  left: -8px;
+  transform: rotate(-35deg);
+  transform-origin: right center;
+  animation: mascot-wave-left 1.8s ease-in-out infinite;
+}
+
+.arm-right {
+  right: -8px;
+  transform: rotate(35deg);
+  transform-origin: left center;
+  animation: mascot-wave-right 1.8s ease-in-out infinite;
+}
+
+.mascot-sparkle {
+  position: absolute;
+  color: #e9a823;
+  font-size: 23px;
+  animation: mascot-twinkle 2s ease-in-out infinite;
+}
+
+.sparkle-one {
+  top: 0;
+  right: -4px;
+}
+
+.sparkle-two {
+  bottom: 3px;
+  left: -12px;
+  animation-delay: 0.8s;
+}
+
+.mascot-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mascot-caption strong {
+  color: var(--about-green);
+  font-size: 17px;
+}
+
+.mascot-caption span {
+  color: var(--about-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   ABOUT STORY AND VALUES
+========================================= */
+
+.about-story {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 70px;
+  max-width: 1320px;
+  margin: auto;
+  padding: 100px 32px;
+}
+
+.about-story-image {
+  height: 500px;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.about-story-image img,
+.about-gallery-item img {
+  transition: transform 0.65s ease;
+}
+
+.about-story-image:hover img,
+.about-gallery-item:hover img {
+  transform: scale(1.055);
+}
+
+.about-story h2,
+.about-section-heading h2 {
+  margin: 0 0 20px;
+  color: var(--about-dark);
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+}
+
+.about-value {
+  display: flex;
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.about-value > span {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: #eaf5e5;
+  color: var(--about-green);
+}
+
+.about-value h3 {
+  margin: 2px 0 7px;
+  color: var(--about-dark);
+}
+
+.about-value p {
+  margin: 0;
+  color: var(--about-muted);
+  line-height: 1.75;
+}
+
+/* =========================================
+   SOLAR PROCESS SECTION
+========================================= */
+
+.about-process {
+  background: var(--about-light);
+  padding: 90px 32px 100px;
+}
+
+.about-section-heading {
+  max-width: 720px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.about-process-grid {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+/* Static green track behind the cards */
+
+.about-process-grid::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 51px;
+  left: 12%;
+  right: 12%;
+  height: 3px;
+  border-radius: 10px;
+  background: #dcebd5;
+}
+
+/* Moving glowing energy dot */
+
+.about-process-grid::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 47px;
+  left: 12%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: #51c66b;
+  box-shadow:
+    0 0 8px #51c66b,
+    0 0 20px rgba(81, 198, 107, 0.6);
+  animation: energy-travel 5s linear infinite;
+}
+
+.about-process-card {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  padding: 28px 23px;
+  background: #ffffff;
+  border: 1px solid #e4eadf;
+  border-radius: 16px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-process-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 35px rgba(28, 76, 39, 0.09);
+}
+
+.about-process-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.about-step-number {
+  color: #b5c9b0;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.about-step-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #eaf5e5;
+  color: var(--about-green);
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.about-process-card:hover .about-step-icon {
+  transform: rotate(-8deg) scale(1.12);
+  background: #d8f0cd;
+  box-shadow: 0 0 20px rgba(81, 166, 68, 0.2);
+}
+
+.about-process-card h3 {
+  margin: 0 0 12px;
+  color: var(--about-dark);
+}
+
+.about-process-card p {
+  color: var(--about-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-step-line {
+  position: relative;
+  width: 45px;
+  height: 3px;
+  margin-top: 22px;
+  border-radius: 5px;
+  background: #80bc69;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.about-process-card:hover .about-step-line {
+  width: 100%;
+}
+
+.about-step-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -50%;
+  width: 45%;
+  background: rgba(255, 255, 255, 0.85);
+  transform: skewX(-25deg);
+  animation: energy-shimmer 2.8s ease-in-out infinite;
+}
+
+/* =========================================
+   SOLAR PROJECT GALLERY
+========================================= */
+
+.about-gallery {
+  padding: 90px 32px 100px;
+}
+
+.about-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.about-gallery-item {
+  position: relative;
+  height: 270px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #eaf0e7;
+}
+
+.about-gallery-item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 35px 16px 17px;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(
+    transparent,
+    rgba(10, 35, 17, 0.8)
+  );
+}
+
+/* =========================================
+   CONTACT CALL TO ACTION
+========================================= */
+
+.about-cta {
+  padding: 85px 24px;
+  text-align: center;
+  background: linear-gradient(130deg, #153c25, #28743a);
+}
+
+.about-cta-content {
+  max-width: 720px;
+  margin: auto;
+}
+
+.about-cta .about-tag {
+  color: #c7edb9;
+}
+
+.about-cta h2 {
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 46px);
+  margin: 0 0 15px;
+}
+
+.about-cta p {
+  color: #e1eee2;
+}
+
+.about-cta .about-primary-btn {
+  background: #ffffff;
+  color: var(--about-dark);
+}
+
+.about-cta .about-primary-btn:hover {
+  background: #eaf5e5;
+}
+
+/* =========================================
+   SCROLL REVEAL ANIMATIONS
+========================================= */
+
+.about-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.about-reveal.about-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes mascot-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(3deg);
+  }
+}
+
+@keyframes mascot-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mascot-blink {
+  0%, 43%, 47%, 100% {
+    transform: scaleY(1);
+  }
+
+  45% {
+    transform: scaleY(0.12);
+  }
+}
+
+@keyframes mascot-wave-left {
+  0%, 100% {
+    transform: rotate(-35deg);
+  }
+
+  50% {
+    transform: rotate(-65deg);
+  }
+}
+
+@keyframes mascot-wave-right {
+  0%, 100% {
+    transform: rotate(35deg);
+  }
+
+  50% {
+    transform: rotate(65deg);
+  }
+}
+
+@keyframes mascot-twinkle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes mascot-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes energy-travel {
+  0% {
+    left: 12%;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    left: calc(88% - 12px);
+    opacity: 0;
+  }
+}
+
+@keyframes energy-shimmer {
+  0%, 20% {
+    left: -50%;
+  }
+
+  70%, 100% {
+    left: 130%;
+  }
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 950px) {
+  .about-hero {
+    gap: 30px;
+    padding: 65px 5%;
+  }
+
+  .about-story {
+    gap: 35px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .about-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Hide the horizontal track when cards wrap to two rows */
+  .about-process-grid::before,
+  .about-process-grid::after {
+    display: none;
+  }
+
+  .about-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 650px) {
+  .about-hero,
+  .about-story {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    padding: 55px 22px;
+  }
+
+  .about-hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .about-hero-image {
+    height: 300px;
+  }
+
+  .solar-mascot {
+    gap: 13px;
+  }
+
+  .mascot-sun {
+    width: 82px;
+    height: 82px;
+  }
+
+  .mascot-face {
+    transform: scale(0.82);
+  }
+
+  .mascot-caption strong {
+    font-size: 15px;
+  }
+
+  .mascot-caption span {
+    max-width: 160px;
+    font-size: 12px;
+  }
+
+  .about-story {
+    padding: 65px 22px;
+  }
+
+  .about-story-image {
+    height: 320px;
+  }
+
+  .about-process,
+  .about-gallery {
+    padding: 65px 22px;
+  }
+
+  .about-process-grid,
+  .about-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-gallery-item {
+    height: 280px;
+  }
+
+  .about-cta {
+    padding: 65px 22px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY: REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .solar-mascot,
+  .mascot-sun,
+  .mascot-rays,
+  .mascot-eye,
+  .mascot-arm,
+  .mascot-sparkle,
+  .about-process-grid::after,
+  .about-step-line::after {
+    animation: none !important;
+  }
+
+  .about-process-card,
+  .about-primary-btn,
+  .about-gallery-item img,
+  .about-step-icon {
+    transition: none;
+  }
+}
+
+
+/* =========================================
+   ANIMATED SOLAR ENERGY SCENE
+========================================= */
+
+.solar-demo-section {
+  padding: 85px 24px 75px;
+  background:
+    radial-gradient(ellipse at 20% 50%, #fff9df 0%, transparent 36%),
+    linear-gradient(180deg, #ffffff, #f4f9f0);
+  overflow: hidden;
+}
+
+.solar-demo-heading {
+  max-width: 720px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.solar-demo-heading h2 {
+  color: #153c25;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.solar-demo-heading h2 span {
+  color: #28743a;
+}
+
+.solar-demo-heading p {
+  color: #667568;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Main animated scene */
+
+.solar-demo-scene {
+  position: relative;
+  display: grid;
+  grid-template-columns: 150px minmax(80px, 1fr) 220px 150px;
+  align-items: center;
+  gap: 20px;
+  max-width: 1000px;
+  min-height: 290px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #e1ecd9;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 18px 55px rgba(35, 89, 42, 0.07);
+}
+
+/* Cartoon sun */
+
+.demo-sun {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+.demo-sun-rays {
+  position: absolute;
+  top: 0;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    #f8c747 0deg 9deg,
+    transparent 9deg 30deg
+  );
+  animation: demo-rays-spin 24s linear infinite;
+}
+
+.demo-sun-face {
+  position: relative;
+  z-index: 1;
+  width: 76px;
+  height: 76px;
+  margin-top: 16px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #ffe984, #ffbd35);
+  box-shadow: 0 0 35px rgba(255, 196, 54, 0.45);
+  animation: demo-sun-bob 3s ease-in-out infinite;
+}
+
+.demo-eye {
+  position: absolute;
+  top: 28px;
+  width: 6px;
+  height: 9px;
+  border-radius: 50%;
+  background: #49391f;
+}
+
+.demo-eye-left {
+  left: 22px;
+}
+
+.demo-eye-right {
+  right: 22px;
+}
+
+.demo-sun-smile {
+  position: absolute;
+  top: 39px;
+  left: 29px;
+  width: 18px;
+  height: 9px;
+  border-bottom: 3px solid #49391f;
+  border-radius: 0 0 18px 18px;
+}
+
+.demo-sun-label,
+.demo-panel-label,
+.demo-worker-label {
+  color: #526954;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+/* Travelling sunlight */
+
+.demo-energy-path {
+  position: relative;
+  height: 4px;
+  border-radius: 20px;
+  background: #e5edcf;
+  box-shadow: 0 0 10px rgba(243, 190, 53, 0.2);
+}
+
+.demo-energy-path::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f6c640,
+    #75d88a,
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: demo-beam-flow 2.2s linear infinite;
+}
+
+.demo-energy-dot {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffc83d;
+  box-shadow: 0 0 12px #f8c747;
+  transform: translateY(-50%);
+  animation: demo-dot-travel 2.4s linear infinite;
+}
+
+.dot-one {
+  animation-delay: 0s;
+}
+
+.dot-two {
+  animation-delay: 0.8s;
+}
+
+.dot-three {
+  animation-delay: 1.6s;
+}
+
+/* Solar panel */
+
+.demo-panel-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 1;
+}
+
+.demo-panel-glow {
+  position: absolute;
+  inset: 0;
+  background: rgba(72, 192, 95, 0.18);
+  border-radius: 50%;
+  filter: blur(28px);
+  opacity: 0.3;
+  animation: demo-panel-pulse 2.5s ease-in-out infinite;
+}
+
+.demo-solar-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3px;
+  width: 145px;
+  height: 104px;
+  padding: 5px;
+  border: 4px solid #738d9c;
+  border-radius: 5px;
+  background: #203f56;
+  transform: perspective(350px) rotateX(8deg) skewY(-3deg);
+  box-shadow: 0 9px 20px rgba(25, 58, 74, 0.18);
+}
+
+.demo-panel-cell {
+  border: 1px solid rgba(190, 231, 255, 0.5);
+  background: linear-gradient(135deg, #2f7295, #164461);
+  animation: demo-cell-light 3s ease-in-out infinite;
+}
+
+.demo-panel-cell:nth-child(3n) {
+  animation-delay: 0.4s;
+}
+
+.demo-panel-cell:nth-child(3n + 1) {
+  animation-delay: 0.8s;
+}
+
+.demo-panel-stand {
+  width: 6px;
+  height: 25px;
+  margin-top: -10px;
+  background: #9ca9a5;
+}
+
+.demo-panel-label {
+  position: relative;
+  z-index: 1;
+}
+
+.demo-power-indicator {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid #cce9cb;
+  border-radius: 20px;
+  color: #28743a;
+  background: #f0faed;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.demo-power-indicator span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #45c66a;
+  box-shadow: 0 0 9px #45c66a;
+  animation: demo-status-blink 1.4s infinite;
+}
+
+/* Cartoon solar installer */
+
+.demo-worker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  animation: demo-worker-bob 3.5s ease-in-out infinite;
+}
+
+.demo-worker-head {
+  position: relative;
+  z-index: 2;
+  width: 45px;
+  height: 47px;
+  border: 2px solid #d99a69;
+  border-radius: 45% 45% 48% 48%;
+  background: #ffd3a5;
+}
+
+.demo-worker-helmet {
+  position: absolute;
+  top: -8px;
+  left: -5px;
+  width: 51px;
+  height: 17px;
+  border: 2px solid #dba12d;
+  border-radius: 25px 25px 5px 5px;
+  background: #ffd04a;
+}
+
+.demo-worker-helmet::after {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 0;
+  width: 5px;
+  height: 10px;
+  border-radius: 4px;
+  background: #fff0a5;
+}
+
+.demo-worker-eye {
+  position: absolute;
+  top: 22px;
+  width: 4px;
+  height: 6px;
+  border-radius: 50%;
+  background: #49391f;
+}
+
+.worker-eye-left {
+  left: 11px;
+}
+
+.worker-eye-right {
+  right: 11px;
+}
+
+.demo-worker-smile {
+  position: absolute;
+  left: 17px;
+  top: 30px;
+  width: 12px;
+  height: 6px;
+  border-bottom: 2px solid #49391f;
+  border-radius: 0 0 12px 12px;
+}
+
+.demo-worker-body {
+  position: relative;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  margin-top: -1px;
+  border: 2px solid #28743a;
+  border-radius: 12px 12px 7px 7px;
+  background: linear-gradient(90deg, #398a4c, #236c37);
+}
+
+.demo-worker-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 21px;
+  width: 3px;
+  background: #b8e0a9;
+}
+
+.demo-worker-arm {
+  position: absolute;
+  top: 63px;
+  width: 11px;
+  height: 38px;
+  border: 2px solid #d99a69;
+  border-radius: 9px;
+  background: #ffd3a5;
+  transform-origin: top center;
+}
+
+.worker-arm-left {
+  left: 38px;
+  transform: rotate(28deg);
+  animation: demo-worker-wave 1.8s ease-in-out infinite;
+}
+
+.worker-arm-right {
+  right: 38px;
+  transform: rotate(-28deg);
+}
+
+.demo-worker-leg {
+  position: absolute;
+  top: 104px;
+  width: 13px;
+  height: 32px;
+  border-radius: 7px;
+  background: #40566c;
+}
+
+.worker-leg-left {
+  left: calc(50% - 15px);
+  transform: rotate(5deg);
+}
+
+.worker-leg-right {
+  right: calc(50% - 15px);
+  transform: rotate(-5deg);
+}
+
+.demo-worker-label {
+  margin-top: 10px;
+}
+
+.demo-worker-sparkle {
+  position: absolute;
+  top: 4px;
+  right: -13px;
+  color: #e5ac2d;
+  font-size: 23px;
+  animation: demo-sparkle 1.8s ease-in-out infinite;
+}
+
+/* Bottom message */
+
+.solar-demo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.solar-demo-footer p {
+  color: #526954;
+  font-size: 14px;
+  text-align: center;
+}
+
+.demo-check {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: white;
+  background: #28743a;
+  font-weight: 800;
+}
+
+/* =========================================
+   ANIMATION KEYFRAMES
+========================================= */
+
+@keyframes demo-rays-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes demo-sun-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes demo-beam-flow {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes demo-dot-travel {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  10%, 85% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 9px);
+    opacity: 0;
+  }
+}
+
+@keyframes demo-panel-pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes demo-cell-light {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.65);
+  }
+}
+
+@keyframes demo-status-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes demo-worker-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes demo-worker-wave {
+  0%, 100% {
+    transform: rotate(28deg);
+  }
+  50% {
+    transform: rotate(-12deg);
+  }
+}
+
+@keyframes demo-sparkle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.8) rotate(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25) rotate(25deg);
+  }
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
+========================================= */
+
+@media (max-width: 850px) {
+  .solar-demo-scene {
+    grid-template-columns: 110px minmax(45px, 1fr) 170px;
+    gap: 12px;
+    padding: 25px 18px;
+  }
+
+  .demo-worker {
+    display: none;
+  }
+
+  .demo-solar-panel {
+    width: 125px;
+    height: 95px;
+  }
+}
+
+@media (max-width: 560px) {
+  .solar-demo-section {
+    padding: 65px 18px;
+  }
+
+  .solar-demo-scene {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 25px;
+    padding: 30px 18px;
+  }
+
+  .demo-energy-path {
+    width: 4px;
+    height: 45px;
+  }
+
+  .demo-energy-path::after {
+    background: linear-gradient(
+      180deg,
+      transparent,
+      #f6c640,
+      #75d88a,
+      transparent
+    );
+    background-size: 100% 200%;
+    animation: demo-beam-flow-vertical 2.2s linear infinite;
+  }
+
+  .demo-energy-dot {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: demo-dot-travel-vertical;
+  }
+
+  .dot-two {
+    animation-delay: 0.8s;
+  }
+
+  .dot-three {
+    animation-delay: 1.6s;
+  }
+
+  .demo-sun {
+    gap: 14px;
+  }
+
+  .demo-sun-rays {
+    width: 95px;
+    height: 95px;
+  }
+
+  .demo-sun-face {
+    width: 68px;
+    height: 68px;
+  }
+
+  .demo-eye {
+    top: 25px;
+  }
+
+  .demo-eye-left {
+    left: 19px;
+  }
+
+  .demo-eye-right {
+    right: 19px;
+  }
+
+  .demo-sun-smile {
+    top: 35px;
+    left: 25px;
+  }
+
+  .demo-worker {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .solar-demo-footer {
+    align-items: flex-start;
+  }
+
+  .solar-demo-footer p {
+    margin-top: 3px;
+  }
+}
+
+@keyframes demo-beam-flow-vertical {
+  from {
+    background-position: 0 100%;
+  }
+  to {
+    background-position: 0 -100%;
+  }
+}
+
+@keyframes demo-dot-travel-vertical {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10%, 85% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% - 9px);
+    opacity: 0;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-sun-rays,
+  .demo-sun-face,
+  .demo-energy-path::after,
+  .demo-energy-dot,
+  .demo-panel-glow,
+  .demo-panel-cell,
+  .demo-power-indicator span,
+  .demo-worker,
+  .demo-worker-arm,
+  .demo-worker-sparkle {
+    animation: none !important;
+  }
+}
+
+
+/* =====================================
+   ANIMATED SOLAR INSTALLATION PROCESS
+===================================== */
+
+.about-process-card {
+  position: relative;
+  overflow: hidden;
+  animation: process-card-glow 8s ease-in-out infinite;
+}
+
+/* Highlight each stage in sequence */
+.about-process-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.about-process-card:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.about-process-card:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.about-process-card:nth-child(4) {
+  animation-delay: 6s;
+}
+
+@keyframes process-card-glow {
+  0%, 20%, 100% {
+    border-color: rgba(40, 167, 69, 0.12);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    transform: translateY(0);
+  }
+
+  8%, 15% {
+    border-color: rgba(40, 167, 69, 0.8);
+    box-shadow:
+      0 0 12px rgba(40, 167, 69, 0.18),
+      0 0 28px rgba(40, 167, 69, 0.12);
+    transform: translateY(-5px);
+  }
+}
+
+/* Animated green sweep across each card */
+.about-process-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(91, 220, 116, 0.12),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: process-card-sweep 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.about-process-card:nth-child(1)::after {
+  animation-delay: 0s;
+}
+
+.about-process-card:nth-child(2)::after {
+  animation-delay: 2s;
+}
+
+.about-process-card:nth-child(3)::after {
+  animation-delay: 4s;
+}
+
+.about-process-card:nth-child(4)::after {
+  animation-delay: 6s;
+}
+
+@keyframes process-card-sweep {
+  0%, 20%, 100% {
+    left: -120%;
+  }
+
+  12% {
+    left: 150%;
+  }
+}
+
+/* Keep the animation comfortable on smaller screens */
+@media (prefers-reduced-motion: reduce) {
+  .about-process-card,
+  .about-process-card::after {
+    animation: none !important;
+  }
+}
+
+
+/* Four process cards: sequential glow animation */
+.about-process-grid .about-process-card {
+  position: relative;
+  animation: process-highlight 8s ease-in-out infinite;
+}
+
+.about-process-grid .about-process-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.about-process-grid .about-process-card:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.about-process-grid .about-process-card:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.about-process-grid .about-process-card:nth-child(4) {
+  animation-delay: 6s;
+}
+
+@keyframes process-highlight {
+  0%, 25%, 100% {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  }
+
+  10%, 18% {
+    box-shadow:
+      0 0 0 2px rgba(45, 180, 75, 0.45),
+      0 0 25px rgba(45, 180, 75, 0.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-process-grid .about-process-card {
+    animation: none;
+  }
+}
+
+
+/* =====================================
+   SOLAR ENERGY FLOW TO A HOME
+===================================== */
+
+.solar-demo-scene {
+  position: relative;
+}
+
+.energy-home-scene {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  min-height: 145px;
+  margin-top: 8px;
+}
+
+.energy-home {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 18px;
+  color: #239747;
+  border: 1px solid rgba(45, 180, 75, 0.22);
+  border-radius: 18px;
+  background: rgba(232, 250, 237, 0.7);
+  box-shadow: 0 8px 28px rgba(45, 180, 75, 0.1);
+  animation: home-energy-pulse 3s ease-in-out infinite;
+}
+
+.energy-house-icon {
+  width: 86px;
+  height: 78px;
+  overflow: visible;
+}
+
+.energy-home-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.energy-home-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #367447;
+}
+
+.energy-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #39c65a;
+  box-shadow: 0 0 10px rgba(57, 198, 90, 0.8);
+  animation: status-blink 1.4s ease-in-out infinite;
+}
+
+.energy-flow-line {
+  position: absolute;
+  left: 0;
+  right: 125px;
+  top: 50%;
+  height: 3px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(63, 198, 90, 0.05),
+    rgba(63, 198, 90, 0.65)
+  );
+  box-shadow: 0 0 12px rgba(63, 198, 90, 0.18);
+}
+
+.energy-particle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #52e879;
+  box-shadow:
+    0 0 8px #52e879,
+    0 0 18px rgba(82, 232, 121, 0.7);
+  transform: translate(-50%, -50%);
+  animation: energy-particle-travel 2.4s linear infinite;
+}
+
+.particle-two {
+  animation-delay: 0.8s;
+}
+
+.particle-three {
+  animation-delay: 1.6s;
+}
+
+@keyframes energy-particle-travel {
+  0% {
+    left: 0%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@keyframes home-energy-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 28px rgba(45, 180, 75, 0.1);
+  }
+
+  50% {
+    box-shadow:
+      0 8px 32px rgba(45, 180, 75, 0.22),
+      0 0 18px rgba(45, 180, 75, 0.12);
+  }
+}
+
+@keyframes status-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 560px) {
+  .energy-home-scene {
+    min-height: 125px;
+  }
+
+  .energy-flow-line {
+    right: 112px;
+  }
+
+  .energy-home {
+    padding: 8px 12px;
+  }
+
+  .energy-house-icon {
+    width: 70px;
+    height: 65px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .energy-home,
+  .energy-particle,
+  .energy-status-dot {
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================
+   SPAGTECH — FINAL SOLAR ENERGY ANIMATION
+========================================== */
+
+/* Sun: gentle breathing glow */
+.demo-sun {
+  animation: final-sun-glow 3s ease-in-out infinite;
+}
+
+@keyframes final-sun-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(255, 190, 50, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 190, 50, 0.65));
+  }
+}
+
+/* Solar panel: active energy collection */
+.demo-solar-panel {
+  animation: panel-energy-glow 2.4s ease-in-out infinite;
+}
+
+.demo-panel-cell {
+  animation: panel-cell-charge 2.4s ease-in-out infinite;
+}
+
+.demo-panel-cell:nth-child(3n + 2) {
+  animation-delay: 0.2s;
+}
+
+.demo-panel-cell:nth-child(3n) {
+  animation-delay: 0.4s;
+}
+
+@keyframes panel-energy-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(52, 211, 95, 0.12));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(52, 211, 95, 0.5));
+  }
+}
+
+@keyframes panel-cell-charge {
+  0%, 100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Energy particles: brighten as they travel */
+.energy-particle {
+  animation: energy-particle-travel 2.4s linear infinite;
+  will-change: left, opacity;
+}
+
+.energy-particle.particle-two {
+  animation-delay: 0.8s;
+}
+
+.energy-particle.particle-three {
+  animation-delay: 1.6s;
+}
+
+/* House lights up as energy reaches it */
+.energy-home {
+  animation: home-energy-pulse 2.4s ease-in-out infinite;
+  will-change: box-shadow;
+}
+
+.energy-house-icon rect {
+  transition: filter 0.3s ease;
+  animation: house-light-charge 2.4s ease-in-out infinite;
+}
+
+.energy-house-icon rect:nth-of-type(2) {
+  animation-delay: 0.12s;
+}
+
+.energy-house-icon rect:nth-of-type(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes home-energy-pulse {
+  0%, 72% {
+    box-shadow: 0 8px 28px rgba(45, 180, 75, 0.1);
+  }
+  88%, 100% {
+    box-shadow:
+      0 0 20px rgba(45, 180, 75, 0.3),
+      0 8px 34px rgba(45, 180, 75, 0.2);
+  }
+}
+
+@keyframes house-light-charge {
+  0%, 72% {
+    filter: brightness(1);
+  }
+  88%, 100% {
+    filter: brightness(1.25) drop-shadow(0 0 4px rgba(57, 198, 90, 0.4));
+  }
+}
+
+/* Smooth, premium hover response */
+.demo-solar-panel,
+.energy-home {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.demo-panel-wrap:hover .demo-solar-panel {
+  transform: perspective(500px) rotateX(5deg) scale(1.03);
+}
+
+.energy-home:hover {
+  transform: translateY(-4px);
+}
+
+/* Accessibility: respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .demo-sun,
+  .demo-solar-panel,
+  .demo-panel-cell,
+  .energy-particle,
+  .energy-home,
+  .energy-house-icon rect {
+    animation: none !important;
+    will-change: auto;
+  }
+
+  .demo-panel-wrap:hover .demo-solar-panel,
+  .energy-home:hover {
+    transform: none;
+  }
+}
+
+.about-top-bar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 22px 6%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.back-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #176b3a;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 11px 18px;
+  border: 1px solid rgba(36, 130, 76, 0.25);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.back-home-arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.back-home-link:hover {
+  background: #176b3a;
+  color: #ffffff;
+  border-color: #176b3a;
+  box-shadow: 0 8px 25px rgba(23, 107, 58, 0.2);
+  transform: translateY(-2px);
+}
+
+.back-home-link:hover .back-home-arrow {
+  transform: rotate(180deg) translateX(3px);
+}
+
+
+
+/* Fix readability of the bottom About page CTA */
+
+.about-cta {
+  position: relative;
+  isolation: isolate;
+  color: #173b2b;
+}
+
+.about-cta h1,
+.about-cta h2,
+.about-cta h3 {
+  color: #123b29 !important;
+  opacity: 1 !important;
+  text-shadow: none;
+}
+
+.about-cta p {
+  color: #385747 !important;
+  opacity: 1 !important;
+  text-shadow: none;
+}
+
+.about-cta .simulator-kicker,
+.about-cta .eyebrow,
+.about-cta .section-label {
+  color: #27834f !important;
+  opacity: 1 !important;
+}
+
+.about-cta a,
+.about-cta button {
+  color: #ffffff;
+}
+
+.about-cta a {
+  background: #ffffff;
+  border: 1px solid #d4e5d9;
+}
+
+.about-cta a:hover {
+  background: #eaf7ee;
+  color: #123b29;
+}
+
+/* Dark green About page section label */
+.about-cta .simulator-kicker,
+.about-cta .eyebrow,
+.about-cta .section-label {
+  color: #14532d !important;
+  opacity: 1 !important;
+  font-weight: 800;
+}
+
+.about-cta {
+  --accent-color: #14532d;
+}
+
+.about-cta span {
+  color: #14532d !important;
+  opacity: 1 !important;
+}
+
+
+/* Animated energy flowing towards the home */
+.about-page .power-flow-line,
+.about-page .energy-flow-line {
+  stroke-dasharray: 12 10;
+  animation: solar-energy-flow 1.2s linear infinite;
+}
+
+.about-page .power-flow-dot,
+.about-page .energy-pulse {
+  animation: solar-energy-pulse 1.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes solar-energy-flow {
+  to {
+    stroke-dashoffset: -44;
+  }
+}
+
+@keyframes solar-energy-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page .power-flow-line,
+  .about-page .energy-flow-line,
+  .about-page .power-flow-dot,
+  .about-page .energy-pulse {
+    animation: none;
+  }
+}
+
+
+/* =====================================
+   SOLAR ENERGY DOTS MOVING TO THE HOUSE
+===================================== */
+
+.energy-flow-dot,
+.power-flow-dot,
+.energy-pulse {
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: solar-dot-travel 3s linear infinite !important;
+  offset-rotate: 0deg;
+}
+
+/* Stagger the dots so they follow one another */
+.energy-flow-dot:nth-child(2),
+.power-flow-dot:nth-child(2),
+.energy-pulse:nth-child(2) {
+  animation-delay: -1s !important;
+}
+
+.energy-flow-dot:nth-child(3),
+.power-flow-dot:nth-child(3),
+.energy-pulse:nth-child(3) {
+  animation-delay: -2s !important;
+}
+
+@keyframes solar-dot-travel {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+
+.energy-moving-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.energy-moving-dots circle {
+  filter: drop-shadow(0 0 3px #22c55e);
+}
+
+
+
+/* =========================================
+   ENERGY PARTICLES MOVING TOWARDS THE HOUSE
+========================================= */
+
+.energy-home-scene {
+  position: relative;
+}
+
+.energy-flow-line {
+  position: absolute;
+  overflow: visible;
+  isolation: isolate;
+}
+
+/* The moving green/yellow energy dots */
+.energy-flow-line .energy-particle {
+  position: absolute;
+  display: block;
+
+  top: 50%;
+  left: 0;
+
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  background: #facc15;
+  box-shadow:
+    0 0 5px #facc15,
+    0 0 12px rgba(250, 204, 21, 0.9);
+
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+
+  animation: energy-particle-travel 2.6s linear infinite;
+}
+
+.energy-flow-line .particle-two {
+  background: #22c55e;
+  box-shadow:
+    0 0 5px #22c55e,
+    0 0 12px rgba(34, 197, 94, 0.9);
+
+  animation-delay: -0.85s;
+}
+
+.energy-flow-line .particle-three {
+  background: #facc15;
+  animation-delay: -1.7s;
+}
+
+@keyframes energy-particle-travel {
+  0% {
+    left: 0%;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .energy-flow-line .energy-particle {
+    animation: none;
+  }
+}
+
+
+/* Service areas section on About page */
+.about-service-areas {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px clamp(20px, 5vw, 76px);
+  box-sizing: border-box;
+}
+
+.about-service-areas .footer-service-areas {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .about-service-areas {
+    padding: 40px 18px;
+  }
+}

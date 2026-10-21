@@ -1,0 +1,1334 @@
+
+/* ========================================
+   SPAGTECH - INTERACTIVE SOLAR SIMULATOR
+======================================== */
+
+.simulator-page {
+  min-height: 100vh;
+  padding: 30px 22px 60px;
+  color: #effff6;
+  background: transparent;
+}
+
+.simulator-container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.simulator-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 36px;
+  color: #b6d8c7;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.simulator-back:hover {
+  color: #73f4ad;
+  transform: translateX(-3px);
+}
+
+.simulator-hero {
+  max-width: 760px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.simulator-eyebrow,
+.simulator-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #74f5ad;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.simulator-hero h1 {
+  margin: 18px 0;
+  color: #f5fff8;
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 850;
+  line-height: 1.06;
+  letter-spacing: -2.5px;
+}
+
+.simulator-hero h1 span {
+  display: block;
+  color: #78efae;
+  text-shadow: 0 0 32px rgba(89, 244, 159, 0.17);
+}
+
+.simulator-hero > p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #a8c0b5;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.simulator-controls,
+.simulator-dashboard,
+.simulator-explainer {
+  margin-bottom: 28px;
+  padding: 26px;
+  border: 1px solid rgba(135, 242, 181, 0.15);
+  border-radius: 22px;
+  background: rgba(7, 23, 19, 0.78);
+  box-shadow:
+    0 20px 70px rgba(0, 0, 0, 0.12),
+    inset 0 1px rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(14px);
+}
+
+.simulator-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.simulator-section-title h2,
+.simulator-explainer > h2 {
+  margin: 8px 0 0;
+  color: #f1fff6;
+  font-size: clamp(21px, 3vw, 28px);
+  letter-spacing: -0.6px;
+}
+
+.simulator-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 13px;
+  border: 1px solid rgba(145, 229, 179, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #c5e5d2;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.simulator-reset:hover {
+  border-color: #69e9a2;
+  color: #78f6b0;
+}
+
+.simulator-control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.simulator-control-card {
+  min-width: 0;
+  padding: 19px;
+  border: 1px solid rgba(141, 220, 173, 0.12);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.simulator-control-card > label,
+.range-label label {
+  color: #e5f8eb;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.simulator-control-card select {
+  width: 100%;
+  margin-top: 13px;
+  padding: 12px;
+  border: 1px solid rgba(126, 235, 168, 0.22);
+  border-radius: 9px;
+  outline: none;
+  background: #10251d;
+  color: #e9fff1;
+  font: inherit;
+  font-size: 13px;
+}
+
+.simulator-control-card select:focus {
+  border-color: #76e9a5;
+}
+
+.simulator-control-card > p {
+  margin: 12px 0 0;
+  color: #90aa9b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.weather-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.weather-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 76px;
+  padding: 10px 4px;
+  border: 1px solid rgba(135, 226, 167, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #a8c1b2;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  transition: 0.2s ease;
+}
+
+.weather-button:hover,
+.weather-button.active {
+  border-color: rgba(113, 241, 165, 0.6);
+  background: rgba(64, 198, 120, 0.1);
+  color: #8df5b5;
+}
+
+.weather-button.active {
+  box-shadow: inset 0 0 15px rgba(76, 237, 143, 0.04);
+}
+
+.range-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.range-label strong {
+  color: #7bf1ad;
+  font-size: 19px;
+  font-variant-numeric: tabular-nums;
+}
+
+.simulator-control-card input[type="range"] {
+  width: 100%;
+  margin: 25px 0 10px;
+  accent-color: #62e89c;
+  cursor: pointer;
+}
+
+.range-ends {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #819b8b;
+  font-size: 10px;
+}
+
+/* Energy diagram */
+
+.simulation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border: 1px solid rgba(98, 234, 151, 0.2);
+  border-radius: 99px;
+  color: #8aefb3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.simulation-badge > span,
+.status-light {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6ff3a4;
+  box-shadow: 0 0 10px #6ff3a4;
+  animation: simulator-blink 1.5s ease-in-out infinite;
+}
+
+.energy-lab {
+  --flow: #76f2ac;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid rgba(123, 235, 169, 0.15);
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(50, 178, 111, 0.11), transparent 48%),
+    linear-gradient(145deg, rgba(8, 25, 21, 0.94), rgba(8, 15, 22, 0.96));
+}
+
+.energy-lab.mode-offgrid {
+  --flow: #f6cf7b;
+}
+
+.energy-lab.mode-hybrid {
+  --flow: #8bdcff;
+}
+
+.lab-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(172, 224, 190, 0.1);
+  color: #b5d0c0;
+  font-size: 11px;
+}
+
+.lab-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr) 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 5px;
+  max-width: 800px;
+  margin: 30px auto 0;
+}
+
+.lab-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 19px 8px;
+  border: 1px solid rgba(132, 236, 172, 0.17);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(29, 62, 47, 0.52), rgba(13, 27, 30, 0.8));
+  text-align: center;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.lab-node:hover {
+  transform: translateY(-3px);
+  border-color: var(--flow);
+}
+
+.lab-node strong {
+  color: #edfff4;
+  font-size: 12px;
+}
+
+.lab-node > span {
+  color: #9cb8a7;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.sun-node > svg {
+  color: #ffdb78;
+  filter: drop-shadow(0 0 12px rgba(255, 210, 99, 0.7));
+  animation: simulator-sun 3s ease-in-out infinite;
+}
+
+.panel-art {
+  display: grid;
+  grid-template-columns: repeat(3, 13px);
+  gap: 3px;
+  padding: 8px;
+  border: 1px solid #76c9dc;
+  border-radius: 5px;
+  background: #103242;
+  transform: perspective(90px) rotateX(9deg);
+}
+
+.panel-art span {
+  width: 13px;
+  height: 12px;
+  border: 1px solid rgba(137, 223, 255, 0.4);
+  background: linear-gradient(135deg, #287b92, #173e5c);
+  animation: simulator-panel-shine 2.5s ease-in-out infinite;
+}
+
+.panel-art span:nth-child(3n + 2) {
+  animation-delay: 0.5s;
+}
+
+.panel-art span:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+.inverter-lab-node > svg {
+  color: var(--flow);
+  filter: drop-shadow(0 0 8px var(--flow));
+}
+
+.lab-connection {
+  position: relative;
+  height: 2px;
+  background: rgba(115, 237, 165, 0.18);
+}
+
+.flow-particle {
+  position: absolute;
+  top: -2px;
+  left: -6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--flow);
+  box-shadow: 0 0 8px var(--flow), 0 0 16px var(--flow);
+  animation: simulator-flow 1.5s linear infinite;
+}
+
+.flow-particle.delay {
+  animation-delay: 0.75s;
+}
+
+.lab-branch {
+  width: 2px;
+  height: 34px;
+  margin: 0 auto;
+  background: rgba(115, 237, 165, 0.3);
+}
+
+.lab-destinations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lab-destination {
+  min-width: 0;
+}
+
+.branch-connection {
+  position: relative;
+  width: 2px;
+  height: 29px;
+  margin: 0 auto;
+  background: rgba(115, 237, 165, 0.25);
+}
+
+.branch-connection .flow-particle {
+  top: -6px;
+  left: -2px;
+  animation: simulator-flow-down 1.5s linear infinite;
+}
+
+.destination-node {
+  height: 100%;
+  min-height: 182px;
+}
+
+.home-lab-node > svg {
+  color: #7bf0ae;
+  filter: drop-shadow(0 0 9px rgba(123, 240, 174, 0.35));
+}
+
+.home-lab-node small,
+.battery-lab-node small,
+.grid-lab-node small {
+  color: #a3c1af;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.battery-lab-node > svg {
+  color: #f4cd77;
+  filter: drop-shadow(0 0 8px rgba(244, 205, 119, 0.3));
+}
+
+.lab-battery {
+  width: min(100%, 110px);
+  height: 13px;
+  padding: 2px;
+  border: 1px solid rgba(244, 205, 119, 0.55);
+  border-radius: 4px;
+}
+
+.lab-battery > span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #a7d86b, #f4cd77);
+  box-shadow: 0 0 8px rgba(244, 205, 119, 0.4);
+  transition: width 0.5s linear;
+}
+
+.grid-lab-node > svg {
+  color: #8bdcff;
+  filter: drop-shadow(0 0 8px rgba(139, 220, 255, 0.3));
+}
+
+.mode-ongrid .battery-connection,
+.mode-ongrid .battery-lab-node {
+  display: none;
+}
+
+.power-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 13px;
+  border: 1px solid rgba(250, 204, 117, 0.3);
+  border-radius: 10px;
+  background: rgba(250, 204, 117, 0.06);
+  color: #f5d996;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.power-warning svg {
+  flex-shrink: 0;
+}
+
+.lab-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(172, 224, 190, 0.1);
+  color: #bad6c5;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Summary metrics */
+
+.simulator-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 28px;
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(134, 235, 174, 0.14);
+  border-radius: 16px;
+  background: rgba(7, 23, 19, 0.75);
+}
+
+.metric-card > svg {
+  color: #79edaa;
+}
+
+.metric-card > span {
+  color: #a3bdad;
+  font-size: 11px;
+}
+
+.metric-card > strong {
+  color: #effff4;
+  font-size: clamp(17px, 2.5vw, 24px);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* Educational section */
+
+.simulator-explainer > h2 {
+  margin: 0 0 22px;
+}
+
+.explainer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.explainer-grid article {
+  padding-top: 16px;
+  border-top: 1px solid rgba(133, 235, 172, 0.2);
+}
+
+.explainer-grid article > span {
+  color: #70efa7;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.explainer-grid h3 {
+  margin: 12px 0 8px;
+  color: #eafff1;
+  font-size: 15px;
+}
+
+.explainer-grid p {
+  margin: 0;
+  color: #a0b9aa;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.simulator-disclaimer {
+  max-width: 900px;
+  margin: 25px auto;
+  color: #8fa899;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.simulator-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(137, 223, 166, 0.13);
+  color: #8da997;
+  font-size: 11px;
+}
+
+.simulator-footer a {
+  color: #81f0ae;
+  text-decoration: none;
+}
+
+.simulator-footer a:hover {
+  color: #d0ffe1;
+}
+
+/* Animations */
+
+@keyframes simulator-flow {
+  from { transform: translateX(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  to { transform: translateX(45px); opacity: 0; }
+}
+
+@keyframes simulator-flow-down {
+  from { transform: translateY(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  to { transform: translateY(29px); opacity: 0; }
+}
+
+@keyframes simulator-sun {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+@keyframes simulator-panel-shine {
+  0%, 100% { filter: brightness(0.85); }
+  50% { filter: brightness(1.5); }
+}
+
+@keyframes simulator-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* Responsive layouts */
+
+@media (max-width: 760px) {
+  .simulator-page {
+    padding: 22px 14px 40px;
+  }
+
+  .simulator-controls,
+  .simulator-dashboard,
+  .simulator-explainer {
+    padding: 18px;
+  }
+
+  .simulator-control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .simulator-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .explainer-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .lab-flow {
+    grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr) 16px minmax(0, 1fr);
+    gap: 3px;
+  }
+
+  .lab-node {
+    padding: 15px 4px;
+  }
+
+  .lab-node strong {
+    font-size: 10px;
+  }
+
+  .lab-node > span {
+    font-size: 9px;
+  }
+
+  .lab-destinations {
+    gap: 7px;
+  }
+
+  .destination-node {
+    padding: 14px 5px;
+  }
+
+  .lab-topline {
+    font-size: 9px;
+  }
+
+  .lab-topline span:last-child {
+    text-align: right;
+  }
+}
+
+@media (max-width: 420px) {
+  .simulator-hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .simulator-section-title {
+    align-items: flex-start;
+  }
+
+  .simulator-kicker {
+    letter-spacing: 1px;
+  }
+
+  .weather-button {
+    font-size: 10px;
+  }
+
+  .energy-lab {
+    padding: 12px 7px;
+  }
+
+  .lab-flow {
+    grid-template-columns: minmax(0, 1fr) 10px minmax(0, 1fr) 10px minmax(0, 1fr);
+    gap: 2px;
+  }
+
+  .lab-node {
+    padding: 12px 2px;
+    border-radius: 9px;
+  }
+
+  .lab-node strong {
+    font-size: 9px;
+  }
+
+  .lab-node > span,
+  .home-lab-node small,
+  .battery-lab-node small,
+  .grid-lab-node small {
+    font-size: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .panel-art {
+    grid-template-columns: repeat(3, 9px);
+    padding: 5px;
+  }
+
+  .panel-art span {
+    width: 9px;
+    height: 9px;
+  }
+
+  .lab-destinations {
+    gap: 4px;
+  }
+
+  .destination-node {
+    min-height: 165px;
+    padding: 12px 3px;
+  }
+
+  .lab-status {
+    font-size: 11px;
+  }
+
+  .simulator-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .simulator-page *,
+  .simulator-page *::before,
+  .simulator-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================
+   SPAGTECH — DARK SOLAR SIMULATOR THEME
+   Append to the bottom of SolarSimulator.css
+========================================= */
+
+.solar-simulator,
+.solar-simulator-page,
+.simulator-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  color: #f1f5f9;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(16, 185, 129, 0.12), transparent 48%),
+    linear-gradient(145deg, #07110f 0%, #0b1715 52%, #07101a 100%);
+}
+
+/* Keep the simulator content above decorative backgrounds */
+.solar-simulator > *,
+.solar-simulator-page > *,
+.simulator-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Main headings and body copy */
+.solar-simulator h1,
+.solar-simulator h2,
+.solar-simulator h3,
+.solar-simulator-page h1,
+.solar-simulator-page h2,
+.solar-simulator-page h3,
+.simulator-page h1,
+.simulator-page h2,
+.simulator-page h3 {
+  color: #f8fafc;
+}
+
+.solar-simulator p,
+.solar-simulator label,
+.solar-simulator-page p,
+.solar-simulator-page label,
+.simulator-page p,
+.simulator-page label {
+  color: #bdcbd0;
+}
+
+/* Dark glass panels */
+.solar-simulator .simulator-panel,
+.solar-simulator .simulator-card,
+.solar-simulator-page .simulator-panel,
+.solar-simulator-page .simulator-card,
+.simulator-page .simulator-panel,
+.simulator-page .simulator-card {
+  background: rgba(13, 27, 25, 0.96);
+  border: 1px solid rgba(110, 231, 183, 0.2);
+  color: #f1f5f9;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+/* Form controls */
+.solar-simulator select,
+.solar-simulator input,
+.solar-simulator-page select,
+.solar-simulator-page input,
+.simulator-page select,
+.simulator-page input {
+  color: #f8fafc;
+  accent-color: #34d399;
+}
+
+.solar-simulator select,
+.solar-simulator-page select,
+.simulator-page select {
+  background-color: #10231e;
+  border: 1px solid #31564a;
+}
+
+.solar-simulator button,
+.solar-simulator-page button,
+.simulator-page button {
+  transition: border-color 0.2s ease, background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.solar-simulator button:hover,
+.solar-simulator-page button:hover,
+.simulator-page button:hover {
+  border-color: #34d399;
+}
+
+.solar-simulator button:focus-visible,
+.solar-simulator-page button:focus-visible,
+.simulator-page button:focus-visible {
+  outline: 2px solid #6ee7b7;
+  outline-offset: 3px;
+}
+
+/* Step-by-step guide */
+.simulator-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.simulator-step {
+  padding: 20px;
+  border-radius: 16px;
+  background: #10201d;
+  border: 1px solid #29443b;
+  color: #e5f5ee;
+}
+
+.simulator-step-number {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  background: rgba(52, 211, 153, 0.14);
+  color: #6ee7b7;
+  font-weight: 800;
+}
+
+.simulator-step h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #f8fafc;
+}
+
+.simulator-step p {
+  margin: 0;
+  color: #b7c8c1;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.simulator-step.is-active {
+  border-color: #34d399;
+  box-shadow: 0 0 0 1px rgba(52, 211, 153, 0.15);
+}
+
+/* Readable metric cards */
+.solar-simulator .metric-card,
+.solar-simulator-page .metric-card,
+.simulator-page .metric-card {
+  background: #12231f;
+  border: 1px solid #2d4b40;
+  color: #f8fafc;
+}
+
+@media (max-width: 850px) {
+  .simulator-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .simulator-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .simulator-step {
+    padding: 16px;
+  }
+}
+
+
+.simulator-steps-section {
+  margin: 30px 0;
+  padding: 28px;
+  border: 1px solid #29443b;
+  border-radius: 22px;
+  background: rgba(8, 20, 17, 0.96);
+}
+
+.simulator-eyebrow {
+  color: #6ee7b7;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.simulator-steps-section > h2 {
+  margin: 8px 0;
+  color: #f8fafc;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.simulator-guide-intro {
+  max-width: 700px;
+  color: #bdcbd0;
+  line-height: 1.7;
+}
+
+
+/* Dedicated dark theme for the simulator page */
+.solar-simulator-dark {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  padding: 32px 24px 60px;
+  color: #f1f5f9;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(16, 185, 129, 0.10), transparent 45%),
+    #07110f;
+}
+
+/* Ensure readable text */
+.solar-simulator-dark h1,
+.solar-simulator-dark h2,
+.solar-simulator-dark h3,
+.solar-simulator-dark h4 {
+  color: #f8fafc !important;
+}
+
+.solar-simulator-dark p,
+.solar-simulator-dark label,
+.solar-simulator-dark .simulator-eyebrow {
+  color: #b8ccc4;
+}
+
+/* Darken the guide panel */
+.solar-simulator-dark .simulator-steps-section {
+  background: #0b1916;
+  border-color: #29443b;
+}
+
+.solar-simulator-dark .simulator-guide-intro {
+  color: #bdcbd0;
+}
+
+.solar-simulator-dark .simulator-step {
+  background: #10201d;
+  border-color: #29443b;
+}
+
+.solar-simulator-dark .simulator-step h3 {
+  color: #f8fafc;
+}
+
+.solar-simulator-dark .simulator-step p {
+  color: #bdcbd0;
+}
+
+
+/* Beginner mode: experiments and plain-English explanations */
+
+.experiment-section,
+.energy-explanation,
+.power-balance {
+  margin: 28px 0;
+  padding: 26px;
+  border: 1px solid #29443b;
+  border-radius: 20px;
+  background: #0b1916;
+  color: #f8fafc;
+}
+
+.experiment-heading h2,
+.simulator-explainer h2 {
+  margin: 10px 0;
+  color: #f8fafc;
+}
+
+.experiment-heading p,
+.energy-explanation p,
+.simulator-explainer article p {
+  color: #bdcbd0;
+  line-height: 1.8;
+}
+
+.experiment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.experiment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 210px;
+  padding: 20px;
+  border: 1px solid #29443b;
+  border-radius: 16px;
+  background: #10201d;
+  color: #f8fafc;
+  text-align: left;
+  cursor: pointer;
+}
+
+.experiment-card svg {
+  color: #6ee7b7;
+}
+
+.experiment-card strong {
+  color: #f8fafc;
+  font-size: 1rem;
+}
+
+.experiment-card span {
+  color: #bdcbd0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.experiment-card small {
+  margin-top: auto;
+  color: #6ee7b7;
+  font-weight: 700;
+}
+
+.experiment-card:hover {
+  border-color: #34d399;
+  background: #142a24;
+  transform: translateY(-2px);
+}
+
+.energy-explanation {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.explanation-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #12352b;
+  color: #6ee7b7;
+}
+
+.energy-explanation h3 {
+  margin: 8px 0;
+  color: #f8fafc;
+  font-size: 1.25rem;
+}
+
+.learning-tip {
+  margin-top: 14px;
+  padding: 14px;
+  border-left: 3px solid #34d399;
+  border-radius: 0 10px 10px 0;
+  background: #10231e;
+  color: #d1fae5;
+  line-height: 1.7;
+}
+
+.learning-tip strong {
+  color: #6ee7b7;
+}
+
+.power-balance {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.power-balance > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #10201d;
+}
+
+.power-balance span {
+  color: #bdcbd0;
+  font-size: 0.9rem;
+}
+
+.power-balance strong {
+  color: #6ee7b7;
+  font-size: 1.5rem;
+}
+
+.power-balance small {
+  color: #94aaa1;
+}
+
+.simulator-explainer article {
+  padding: 20px;
+  border: 1px solid #29443b;
+  border-radius: 16px;
+  background: #0b1916;
+}
+
+.simulator-explainer article h3 {
+  color: #f8fafc;
+}
+
+@media (max-width: 1000px) {
+  .experiment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .experiment-grid,
+  .power-balance {
+    grid-template-columns: 1fr;
+  }
+
+  .experiment-section,
+  .energy-explanation,
+  .power-balance {
+    padding: 18px;
+  }
+
+  .energy-explanation {
+    gap: 12px;
+  }
+}
+
+
+/* =========================================
+   LIVE ENERGY SIMULATION CONTROLS
+========================================= */
+
+.simulation-console {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 24px 0;
+  padding: 22px;
+  background: #091713;
+  border: 1px solid #29443b;
+  border-radius: 18px;
+  color: #f8fafc;
+}
+
+.simulation-clock {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.simulation-clock .simulator-kicker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.simulation-clock > strong {
+  color: #6ee7b7;
+  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+.simulation-clock small {
+  color: #9fb5ac;
+  line-height: 1.5;
+}
+
+.simulation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.simulation-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 1px solid #31564a;
+  border-radius: 10px;
+  background: #12251f;
+  color: #f1f5f9;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.simulation-actions .simulation-play {
+  border-color: #34d399;
+  background: #047857;
+  color: white;
+}
+
+.simulation-actions button:hover:not(:disabled) {
+  border-color: #6ee7b7;
+  transform: translateY(-1px);
+}
+
+.simulation-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.simulation-help {
+  flex-basis: 100%;
+  margin: 0;
+  color: #bdcbd0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* Pause the decorative energy particles when paused. */
+.energy-lab.simulation-paused .flow-particle {
+  animation-play-state: paused !important;
+}
+
+.energy-lab.simulation-playing .flow-particle {
+  animation-play-state: running;
+}
+
+.energy-lab.simulation-playing .lab-status .status-light {
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.8);
+}
+
+.energy-lab.simulation-paused .lab-status .status-light {
+  box-shadow: none;
+  opacity: 0.55;
+}
+
+@media (max-width: 600px) {
+  .simulation-console {
+    align-items: stretch;
+    padding: 17px;
+  }
+
+  .simulation-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .simulation-actions button {
+    width: 100%;
+  }
+
+  .simulation-clock > strong {
+    font-size: 1.8rem;
+  }
+}

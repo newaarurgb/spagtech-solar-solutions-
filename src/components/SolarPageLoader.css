@@ -1,0 +1,577 @@
+
+/* =========================================
+   SPAGTECH — SOLAR PAGE LOADER
+========================================= */
+
+.solar-page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(67, 133, 73, 0.28),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      #071b12 0%,
+      #103b27 52%,
+      #06180f 100%
+    );
+
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 450ms ease,
+    visibility 450ms ease;
+}
+
+.solar-page-loader.loader-exiting {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Background grid */
+
+.solar-page-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.16;
+
+  background-image:
+    linear-gradient(
+      rgba(206, 255, 171, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(206, 255, 171, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  -webkit-mask-image: radial-gradient(
+    ellipse,
+    #000000,
+    transparent 75%
+  );
+
+  mask-image: radial-gradient(
+    ellipse,
+    #000000,
+    transparent 75%
+  );
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.solar-loader-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: min(90vw, 480px);
+  padding: 20px;
+
+  text-align: center;
+
+  animation: loader-content-enter 800ms ease both;
+}
+
+/* =========================================
+   ANIMATED SUN
+========================================= */
+
+.solar-loader-art {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  width: 190px;
+  height: 190px;
+  flex-shrink: 0;
+
+  margin-bottom: 22px;
+}
+
+.loader-sun-rays {
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  border: 2px dashed rgba(244, 214, 91, 0.72);
+  border-radius: 50%;
+
+  animation: loader-rays-spin 24s linear infinite;
+}
+
+.loader-sun-rays::before,
+.loader-sun-rays::after {
+  content: "";
+  position: absolute;
+
+  inset: -13px 47%;
+
+  border-radius: 10px;
+  background: #f9d957;
+
+  box-shadow:
+    0 -8px 0 -2px #f9d957,
+    0 8px 0 -2px #f9d957;
+}
+
+.loader-sun-rays::after {
+  transform: rotate(60deg);
+}
+
+.loader-sun {
+  position: relative;
+  z-index: 2;
+
+  width: 104px;
+  height: 104px;
+
+  border: 5px solid #ffe989;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    145deg,
+    #fff4b8,
+    #f9d957
+  );
+
+  box-shadow:
+    0 0 30px rgba(249, 217, 87, 0.35),
+    0 0 75px rgba(249, 217, 87, 0.16);
+
+  animation: loader-sun-float 2.8s ease-in-out infinite;
+}
+
+/* Sun face */
+
+.loader-sun-eye {
+  position: absolute;
+  top: 38px;
+
+  width: 7px;
+  height: 11px;
+
+  border-radius: 50%;
+  background: #17452d;
+}
+
+.eye-left {
+  left: 29px;
+}
+
+.eye-right {
+  right: 29px;
+}
+
+.loader-sun-smile {
+  position: absolute;
+
+  left: 35px;
+  top: 51px;
+
+  width: 28px;
+  height: 15px;
+
+  border-bottom: 4px solid #17452d;
+  border-radius: 0 0 50% 50%;
+}
+
+/* =========================================
+   SOLAR PANEL
+========================================= */
+
+.loader-solar-panel {
+  position: absolute;
+  z-index: 3;
+
+  bottom: 0;
+  left: 50%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+
+  width: 115px;
+  padding: 5px;
+
+  border: 2px solid #c9ef91;
+  border-radius: 7px;
+
+  background: #205d3d;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+
+  transform: translateX(-50%) perspective(120px) rotateX(8deg);
+}
+
+.loader-solar-panel span {
+  display: block;
+
+  height: 12px;
+
+  border: 1px solid rgba(223, 255, 186, 0.7);
+
+  background: linear-gradient(
+    135deg,
+    #4f9e6c,
+    #17452d
+  );
+}
+
+/* =========================================
+   BRANDING AND TEXT
+========================================= */
+
+.loader-eyebrow {
+  margin: 0 0 12px;
+
+  color: #c8ed9c;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.6;
+}
+
+.loader-brand {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(40px, 9vw, 62px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.1;
+
+  overflow-wrap: anywhere;
+}
+
+.loader-brand span {
+  color: #c9f477;
+}
+
+.loader-subtitle {
+  margin: 12px 0 28px;
+
+  color: #d0dfd2;
+
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   LOADING PROGRESS
+========================================= */
+
+.loader-progress-track {
+  position: relative;
+
+  width: min(250px, 75vw);
+  height: 4px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.loader-progress-bar {
+  display: block;
+
+  width: 40%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #8bcf5b,
+    #f9d957
+  );
+
+  box-shadow: 0 0 12px rgba(201, 244, 119, 0.5);
+
+  animation: loader-progress 1.1s ease-in-out infinite;
+}
+
+.loader-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin: 16px 0 0;
+
+  color: #d3e2d4;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.loader-status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #c9f477;
+
+  box-shadow: 0 0 10px rgba(201, 244, 119, 0.7);
+
+  animation: loader-dot-pulse 1.2s ease-in-out infinite;
+}
+
+/* =========================================
+   ORBITS AND PARTICLES
+========================================= */
+
+.loader-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 42%;
+
+  width: min(70vw, 540px);
+  aspect-ratio: 1;
+
+  border: 1px solid rgba(201, 244, 119, 0.1);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.orbit-two {
+  width: min(88vw, 700px);
+
+  border-color: rgba(249, 217, 87, 0.07);
+}
+
+.loader-particles {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+
+.loader-particle {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+  background: #c9f477;
+
+  box-shadow: 0 0 12px rgba(201, 244, 119, 0.8);
+  opacity: 0;
+
+  animation-name: loader-particle-rise;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: calc(var(--particle-index, 0) * -0.48s);
+}
+
+
+/* =========================================
+   BOTTOM LABEL
+========================================= */
+
+.loader-bottom-label {
+  position: absolute;
+
+  bottom: max(22px, env(safe-area-inset-bottom, 0px));
+  left: 16px;
+  right: 16px;
+
+  color: rgba(224, 243, 219, 0.55);
+
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 2.4px;
+  text-align: center;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes loader-rays-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-sun-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes loader-progress {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  100% {
+    transform: translateX(260%);
+  }
+}
+
+@keyframes loader-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes loader-particle-rise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.85;
+  }
+
+  85% {
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: translateY(-105vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes loader-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .solar-loader-content {
+    width: 94vw;
+    padding: 16px;
+  }
+
+  .solar-loader-art {
+    transform: scale(0.86);
+    margin-bottom: 8px;
+  }
+
+  .loader-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .loader-brand {
+    font-size: clamp(34px, 10vw, 46px);
+    letter-spacing: 1px;
+  }
+
+  .loader-subtitle {
+    max-width: 280px;
+    margin: 10px 0 24px;
+
+    font-size: 12px;
+  }
+
+  .loader-bottom-label {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  .solar-loader-content {
+    transform: scale(0.72);
+  }
+
+  .solar-loader-art {
+    margin-bottom: 0;
+  }
+
+  .loader-subtitle {
+    margin: 8px 0 14px;
+  }
+
+  .loader-bottom-label {
+    bottom: 6px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .solar-page-loader,
+  .solar-page-loader *,
+  .solar-page-loader::before {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .solar-page-loader .loader-progress-bar {
+    transform: translateX(0);
+  }
+}

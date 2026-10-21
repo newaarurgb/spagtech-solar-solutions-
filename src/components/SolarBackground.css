@@ -1,0 +1,297 @@
+
+/* Global animated solar atmosphere */
+.solar-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  background: #f6fbf5;
+}
+
+/* Slow-moving colored auroras */
+.solar-aurora {
+  position: absolute;
+  width: 65vw;
+  height: 65vw;
+  max-width: 850px;
+  max-height: 850px;
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0.48;
+  will-change: transform;
+}
+
+.aurora-one {
+  top: -35%;
+  left: -20%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 219, 124, 0.7),
+    rgba(99, 219, 124, 0) 68%
+  );
+  animation: auroraFloatOne 20s ease-in-out infinite alternate;
+}
+
+.aurora-two {
+  top: 15%;
+  right: -30%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 207, 93, 0.55),
+    rgba(255, 207, 93, 0) 70%
+  );
+  animation: auroraFloatTwo 24s ease-in-out infinite alternate;
+}
+
+.aurora-three {
+  bottom: -45%;
+  left: 15%;
+  background: radial-gradient(
+    circle,
+    rgba(45, 174, 101, 0.45),
+    rgba(45, 174, 101, 0) 70%
+  );
+  animation: auroraFloatThree 22s ease-in-out infinite alternate;
+}
+
+/* Floating solar light orbs */
+.solar-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.65;
+}
+
+.orb-one {
+  width: 190px;
+  height: 190px;
+  top: 20%;
+  left: 8%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(255, 224, 128, 0.8),
+    rgba(255, 204, 76, 0.08) 70%,
+    transparent
+  );
+  animation: orbDriftOne 14s ease-in-out infinite;
+}
+
+.orb-two {
+  width: 140px;
+  height: 140px;
+  top: 65%;
+  right: 12%;
+  background: radial-gradient(
+    circle,
+    rgba(94, 224, 130, 0.48),
+    transparent 72%
+  );
+  animation: orbDriftTwo 17s ease-in-out infinite;
+}
+
+/* Fine solar grid */
+.solar-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(39, 133, 67, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(39, 133, 67, 0.1) 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  animation: gridDrift 35s linear infinite;
+}
+
+/* Floating particles */
+.solar-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.solar-particle {
+  position: absolute;
+  left: var(--particle-left);
+  bottom: -20px;
+  width: var(--particle-size);
+  height: var(--particle-size);
+  border-radius: 50%;
+  background: #5bc777;
+  box-shadow: 0 0 12px rgba(66, 193, 100, 0.6);
+  opacity: 0;
+  animation: particleRise var(--particle-duration) linear
+    var(--particle-delay) infinite;
+}
+
+/* Large, subtle energy rings */
+.solar-energy-ring {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border: 1px solid rgba(49, 168, 82, 0.12);
+  border-radius: 50%;
+  opacity: 0.45;
+}
+
+.ring-one {
+  top: 8%;
+  right: -180px;
+  animation: ringRotate 35s linear infinite;
+}
+
+.ring-two {
+  bottom: 4%;
+  left: -240px;
+  width: 600px;
+  height: 600px;
+  border-color: rgba(231, 178, 56, 0.15);
+  animation: ringRotate 48s linear infinite reverse;
+}
+
+/* Animation definitions */
+@keyframes auroraFloatOne {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(12vw, 10vh) scale(1.18); }
+}
+
+@keyframes auroraFloatTwo {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-12vw, 8vh) scale(1.2); }
+}
+
+@keyframes auroraFloatThree {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(8vw, -10vh) scale(1.15); }
+}
+
+@keyframes orbDriftOne {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(50px, 35px); }
+}
+
+@keyframes orbDriftTwo {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-45px, -35px); }
+}
+
+@keyframes particleRise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  15% { opacity: 0.65; }
+  80% { opacity: 0.4; }
+  100% {
+    transform: translate3d(35px, -110vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to { background-position: 58px 58px; }
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile and accessibility adjustments */
+@media (max-width: 700px) {
+  .solar-aurora {
+    width: 110vw;
+    height: 110vw;
+    filter: blur(65px);
+    opacity: 0.38;
+  }
+
+  .solar-orb {
+    opacity: 0.4;
+  }
+
+  .solar-grid {
+    background-size: 42px 42px;
+    opacity: 0.13;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solar-background *,
+  .solar-background {
+    animation: none !important;
+  }
+}
+
+
+/* ===== TRANSPARENT HOMEPAGE LAYERS ===== */
+
+body {
+  background: transparent;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
+/* Keep the background behind the website */
+#root > *:not(.solar-background) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Homepage wrapper */
+.app,
+.home-page,
+main {
+  background-color: transparent;
+}
+
+/* Glass effect for cards */
+.service-card,
+.stat-card,
+.why-card,
+.project-card,
+.process-card,
+.contact-card {
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 35px rgba(39, 105, 59, 0.07);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.service-card:hover,
+.stat-card:hover,
+.why-card:hover,
+.project-card:hover,
+.process-card:hover,
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(63, 174, 99, 0.4);
+  box-shadow: 0 18px 42px rgba(39, 105, 59, 0.13);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .stat-card,
+  .why-card,
+  .project-card,
+  .process-card,
+  .contact-card {
+    transition: none;
+  }
+}
