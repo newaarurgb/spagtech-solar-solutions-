@@ -79,3 +79,56 @@ body {
   position: relative;
   z-index: 1;
 }
+
+
+/* SPAGTECH: mobile touch and layering fix */
+
+body,
+#root {
+  min-height: 100%;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Decorative background layers must never intercept taps */
+body::before,
+body::after {
+  pointer-events: none !important;
+}
+
+/* Keep the navbar and mobile menu above the page */
+.site-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+}
+
+.site-header button,
+.site-header a,
+.site-header nav {
+  pointer-events: auto !important;
+  touch-action: manipulation;
+}
+
+.menu-toggle {
+  position: relative;
+  z-index: 10003 !important;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Make links and buttons tappable */
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+/* Don't let decorative hero overlays intercept taps */
+.hero-image-shade {
+  pointer-events: none;
+}
