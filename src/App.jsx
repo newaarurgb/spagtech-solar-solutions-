@@ -21,8 +21,22 @@ import {
   MessageCircle,
 } from "lucide-react";
 
+
 import "./App.css";
 import FAQ from "./FAQ";
+
+import logoImage from "./components/images/logo.png";
+
+import project1Image from "./components/images/project1.jpg";
+import project2Image from "./components/images/project2.jpg";
+import project3Image from "./components/images/project3.jpg";
+import project4Image from "./components/images/project4.jpg";
+
+import heroSolarImage from "./components/images/hero-solar.jpg";
+import solarRooftopImage from "./components/images/solar-rooftop.jpg";
+import solarInstallationImage from "./components/images/solar-installation.jpg";
+import solarPanelsImage from "./components/images/solar-panels.jpg";
+
 
 
 function App() {
@@ -40,32 +54,33 @@ function App() {
     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   // Portfolio projects
-  const projects = [
-    {
-      image: "./components/images/project1.jpg",
-      title: "Residential Solar",
-      category: "Residential",
-      description: "Solar solutions for homes and rooftops.",
-    },
-    {
-      image: "./components/images/project2.jpg",
-      title: "Commercial Solar",
-      category: "Commercial",
-      description: "Solar energy solutions for business properties.",
-    },
-    {
-      image: "./components/images/project3.jpg",
-      title: "Solar Installation",
-      category: "Installation",
-      description: "Solar panels installed for energy generation.",
-    },
-    {
-      image: "./components/images/project4.jpg",
-      title: "Rooftop Solar",
-      category: "Residential",
-      description: "Make use of available rooftop space.",
-    },
-  ];
+  
+const projects = [
+  {
+    image: project1Image,
+    title: "Residential Solar",
+    category: "Residential",
+    description: "Solar solutions for homes and rooftops.",
+  },
+  {
+    image: project2Image,
+    title: "Commercial Solar",
+    category: "Commercial",
+    description: "Solar energy solutions for business properties.",
+  },
+  {
+    image: project3Image,
+    title: "Solar Installation",
+    category: "Installation",
+    description: "Solar panels installed for energy generation.",
+  },
+  {
+    image: project4Image,
+    title: "Rooftop Solar",
+    category: "Residential",
+    description: "Make use of available rooftop space.",
+  },
+];
 
   const visibleProjects =
     projectFilter === "All"
@@ -75,32 +90,34 @@ function App() {
         );
 
   // Hero image slider
-  const heroImages = [
-    {
-      src: "./components/images/hero-solar.jpg",
-      title: "Clean energy. Brighter future.",
-      description:
-        "Discover smarter solar solutions for your property.",
-    },
-    {
-      src: "./components/images/solar-rooftop.jpg",
-      title: "Make every rooftop count.",
-      description:
-        "Turn sunlight into energy for your everyday needs.",
-    },
-    {
-      src: "./components/images/solar-installation.jpg",
-      title: "Power your world with solar.",
-      description:
-        "Explore solar solutions designed around your requirements.",
-    },
-    {
-      src: "./components/images/solar-panels.jpg",
-      title: "A better way to power tomorrow.",
-      description:
-        "Take a step towards cleaner, more sustainable energy.",
-    },
-  ];
+  
+const heroImages = [
+  {
+    src: heroSolarImage,
+    title: "Clean energy. Brighter future.",
+    description:
+      "Discover smarter solar solutions for your property.",
+  },
+  {
+    src: solarRooftopImage,
+    title: "Make every rooftop count.",
+    description:
+      "Turn sunlight into energy for your everyday needs.",
+  },
+  {
+    src: solarInstallationImage,
+    title: "Power your world with solar.",
+    description:
+      "Explore solar solutions designed around your requirements.",
+  },
+  {
+    src: solarPanelsImage,
+    title: "A better way to power tomorrow.",
+    description:
+      "Take a step towards cleaner, more sustainable energy.",
+  },
+];
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -268,11 +285,11 @@ function App() {
           href="#home"
           aria-label="SPAGTECH home"
         >
-          <img
-            className="brand-logo"
-            src="./components/images/logo.png"
-            alt="SPAGTECH logo"
-          />
+         <img
+  className="brand-logo"
+  src={logoImage}
+  alt="SPAGTECH logo"
+/>
 
           <span>
             <strong>SPAGTECH</strong>

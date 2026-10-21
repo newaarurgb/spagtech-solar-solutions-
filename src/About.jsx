@@ -15,6 +15,15 @@ import { Link } from "react-router-dom";
 import "./About.css";
 import ServiceAreasMap from "./components/ServiceAreasMap";
 
+import aboutSolarImage from "./components/images/about-solar.jpg";
+import solarInstallationImage from "./components/images/solar-installation.jpg";
+
+import project1Image from "./components/images/project1.jpg";
+import project2Image from "./components/images/project2.jpg";
+import project3Image from "./components/images/project3.jpg";
+import project4Image from "./components/images/project4.jpg";
+
+
 const processSteps = [
   {
     number: "01",
@@ -123,7 +132,7 @@ export default function About() {
 
         <div className="about-hero-image about-reveal">
           <img
-            src="./components/images/about-solar.jpg"
+            src={aboutSolarImage}
             alt="Solar installation project"
           />
           <div className="about-image-caption">
@@ -280,7 +289,7 @@ export default function About() {
       <section className="about-story section-padding">
         <div className="about-story-image about-reveal">
           <img
-            src="./components/images/solar-installation.jpg"
+            src={solarInstallationImage}
             alt="Solar panels at an installation site"
             loading="lazy"
           />
@@ -373,7 +382,7 @@ export default function About() {
         <div className="about-gallery-grid">
           <figure className="about-gallery-item about-reveal">
             <img
-              src="./components/images/project1.jpg"
+              src={project1Image}
               alt="Solar project photograph one"
               loading="lazy"
             />
@@ -381,7 +390,7 @@ export default function About() {
           </figure>
           <figure className="about-gallery-item about-reveal">
             <img
-              src="./components/images/project2.jpg"
+              src={project2Image}
               alt="Solar project photograph two"
               loading="lazy"
             />
@@ -389,7 +398,7 @@ export default function About() {
           </figure>
           <figure className="about-gallery-item about-reveal">
             <img
-              src="./components/images/project3.jpg"
+              src={project3Image}
               alt="Solar project photograph three"
               loading="lazy"
             />
@@ -397,7 +406,7 @@ export default function About() {
           </figure>
           <figure className="about-gallery-item about-reveal">
             <img
-              src="./components/images/project4.jpg"
+              src={project4Image}
               alt="Solar project photograph four"
               loading="lazy"
             />
