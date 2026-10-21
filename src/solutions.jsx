@@ -11,7 +11,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import "./Solutions.css";
+import "./solutions.css";
 
 
 const journey = [
