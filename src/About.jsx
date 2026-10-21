@@ -123,7 +123,7 @@ export default function About() {
 
         <div className="about-hero-image about-reveal">
           <img
-            src="/images/about-solar.jpg"
+            src="./images/about-solar.jpg"
             alt="Solar installation project"
           />
           <div className="about-image-caption">

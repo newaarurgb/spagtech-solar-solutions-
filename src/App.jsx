@@ -42,25 +42,25 @@ function App() {
   // Portfolio projects
   const projects = [
     {
-      image: "/images/project1.jpg",
+      image: "./images/project1.jpg",
       title: "Residential Solar",
       category: "Residential",
       description: "Solar solutions for homes and rooftops.",
     },
     {
-      image: "/images/project2.jpg",
+      image: "./images/project2.jpg",
       title: "Commercial Solar",
       category: "Commercial",
       description: "Solar energy solutions for business properties.",
     },
     {
-      image: "/images/project3.jpg",
+      image: "./images/project3.jpg",
       title: "Solar Installation",
       category: "Installation",
       description: "Solar panels installed for energy generation.",
     },
     {
-      image: "/images/project4.jpg",
+      image: "./images/project4.jpg",
       title: "Rooftop Solar",
       category: "Residential",
       description: "Make use of available rooftop space.",
@@ -77,7 +77,7 @@ function App() {
   // Hero image slider
   const heroImages = [
     {
-      src: "/images/hero-solar.jpg",
+      src: "./images/hero-solar.jpg",
       title: "Clean energy. Brighter future.",
       description:
         "Discover smarter solar solutions for your property.",
@@ -89,13 +89,13 @@ function App() {
         "Turn sunlight into energy for your everyday needs.",
     },
     {
-      src: "/images/solar-installation.jpg",
+      src: "./images/solar-installation.jpg",
       title: "Power your world with solar.",
       description:
         "Explore solar solutions designed around your requirements.",
     },
     {
-      src: "/images/solar-panels.jpg",
+      src: "./images/solar-panels.jpg",
       title: "A better way to power tomorrow.",
       description:
         "Take a step towards cleaner, more sustainable energy.",
