@@ -4,8 +4,7 @@ import { MessageCircle, Send, X, Sparkles, RotateCcw } from "lucide-react";
 import "./SunnyChatbot.css";
 
 const API_URL =
-  import.meta.env.VITE_SUNNY_API_URL ||
-  "http://127.0.0.1:8000/api/chat/";
+ import.meta.env.VITE_SUNNY_API_URL;
 
 const initialMessage = {
   role: "assistant",
