@@ -62,8 +62,11 @@ export default function PrivacyPolicy() {
             required by law.
           </p>
           <p>
-            WhatsApp and Google Gemini are third-party services. If you use
-            them, their own privacy policies and terms also apply.
+            WhatsApp and Google Gemini are third-party services. The homepage
+            also links to a YouTube video; opening it takes you to YouTube,
+            where its privacy policy and terms apply. These providers may
+            process technical information such as your IP address and browser
+            details when you use their services.
           </p>
         </section>
 

@@ -17,6 +17,7 @@ import Products from "./Products";
 import PrivacyPolicy from "./PrivacyPolicy";
 import SiteFooter from "./components/SiteFooter";
 import SunnyChatbot from "./components/SunnyChatbot";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import SolarPageLoader from "./components/SolarPageLoader";
 
 import "./index.css";
@@ -39,6 +40,7 @@ function AppLayout() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
 
+      <FloatingWhatsApp />
       <SunnyChatbot />
       <SiteFooter />
     </>

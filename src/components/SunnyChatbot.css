@@ -711,6 +711,15 @@
   animation: sunny-loading-enter 300ms ease both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .sunny-launcher,
+  .sunny-launcher > .sunny-mascot,
+  .sunny-launcher .sunny-rays {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 .sunny-loading-avatar {
   display: grid;
   place-items: center;
@@ -817,5 +826,72 @@
 
   .sunny-thinking-ellipsis {
     width: 16px;
+  }
+}
+
+/* Keep the launcher edge-mounted and the chat panel within the viewport. */
+.sunny-widget {
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+.sunny-launcher,
+.sunny-launcher:hover {
+  width: 40px !important;
+  height: 48px !important;
+  border-left: 0 !important;
+  border-radius: 0 14px 14px 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.sunny-launcher > .sunny-mascot {
+  width: 34px !important;
+  height: 34px !important;
+}
+
+.sunny-launcher-badge {
+  right: -2px;
+  top: -3px;
+}
+
+.sunny-panel {
+  position: fixed !important;
+  top: 50% !important;
+  left: 48px !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: min(390px, calc(100vw - 60px)) !important;
+  height: min(650px, calc(100dvh - 32px));
+  min-height: 0 !important;
+  max-height: calc(100dvh - 32px) !important;
+  transform: translateY(-50%) !important;
+}
+
+@media (max-width: 600px) {
+  .sunny-launcher,
+  .sunny-launcher:hover {
+    width: 36px !important;
+    height: 44px !important;
+  }
+
+  .sunny-launcher > .sunny-mascot {
+    width: 31px !important;
+    height: 31px !important;
+  }
+
+  .sunny-panel {
+    top: 50% !important;
+    left: 42px !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: calc(100vw - 52px) !important;
+    height: min(620px, calc(100dvh - 24px));
+    max-height: calc(100dvh - 24px) !important;
+    transform: translateY(-50%) !important;
   }
 }
