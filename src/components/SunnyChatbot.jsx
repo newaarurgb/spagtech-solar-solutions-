@@ -3,11 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { MessageCircle, Send, X, Sparkles, RotateCcw } from "lucide-react";
 import "./SunnyChatbot.css";
 
-const API_URL =
-  import.meta.env.VITE_SUNNY_API_URL ||
-  (import.meta.env.DEV
-    ? "/api/chat/"
-    : "https://spagtechbackend.vercel.app/api/chat/");
+const API_URL = "/api/chat/";
 
 const initialMessage = {
   role: "assistant",
@@ -120,8 +116,10 @@ export default function SunnyChatbot() {
     } catch (err) {
       setMood("confused");
       setError(
-        err.message ||
-          "I couldn't connect to Sunny's AI. Please try again."
+        err instanceof TypeError
+          ? "Sunny's service is unreachable right now. Please try again shortly."
+          : err.message ||
+            "I couldn't connect to Sunny's AI. Please try again."
       );
     } finally {
       setLoading(false);
