@@ -1,0 +1,119 @@
+.privacy-page {
+  min-height: 65vh;
+  padding: clamp(40px, 7vw, 84px) 20px;
+  color: #233a2b;
+}
+
+.privacy-heading,
+.privacy-content {
+  width: min(100%, 820px);
+  margin-inline: auto;
+}
+
+.privacy-heading {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.privacy-eyebrow {
+  color: #28743a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.privacy-heading h1 {
+  margin: 14px 0 12px;
+  color: #153c25;
+  font: 800 clamp(34px, 6vw, 52px)/1.15 "Manrope", sans-serif;
+}
+
+.privacy-heading p {
+  margin: 0 auto 10px;
+  color: #667568;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.privacy-heading small {
+  color: #667568;
+  font-size: 13px;
+}
+
+.privacy-content {
+  padding: clamp(24px, 5vw, 46px);
+  border: 1px solid #e2eadf;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 48px rgba(21, 60, 37, 0.07);
+}
+
+.privacy-content section + section {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #e8eee5;
+}
+
+.privacy-content h2 {
+  margin: 0 0 10px;
+  color: #153c25;
+  font: 700 19px/1.35 "Manrope", sans-serif;
+}
+
+.privacy-content p {
+  margin: 0;
+  color: #536458;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.privacy-content p + p {
+  margin-top: 12px;
+}
+
+.privacy-content a:not(.privacy-back-link) {
+  color: #28743a;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.privacy-back-link {
+  display: inline-flex;
+  margin-top: 30px;
+  padding: 11px 16px;
+  color: #ffffff;
+  background: #28743a;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.privacy-back-link:hover {
+  background: #153c25;
+}
+
+@media (max-width: 600px) {
+  .privacy-page {
+    padding: 36px 16px 52px;
+  }
+
+  .privacy-heading {
+    margin-bottom: 26px;
+  }
+
+  .privacy-content {
+    padding: 22px 18px;
+    border-radius: 15px;
+  }
+
+  .privacy-content h2 {
+    font-size: 17px;
+  }
+
+  .privacy-content p {
+    font-size: 14px;
+  }
+}

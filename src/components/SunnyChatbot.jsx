@@ -4,7 +4,10 @@ import { MessageCircle, Send, X, Sparkles, RotateCcw } from "lucide-react";
 import "./SunnyChatbot.css";
 
 const API_URL =
- import.meta.env.VITE_SUNNY_API_URL;
+  import.meta.env.VITE_SUNNY_API_URL ||
+  (import.meta.env.DEV
+    ? "/api/chat/"
+    : "https://spagtechbackend.vercel.app/api/chat/");
 
 const initialMessage = {
   role: "assistant",

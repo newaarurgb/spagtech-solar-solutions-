@@ -496,14 +496,14 @@
    SUNNY AI — FLOATING POSITION & PREMIUM UI
    ========================================= */
 
-/* Keep Sunny fixed to the browser viewport */
+/* Keep Sunny small in the lower-left corner, clear of page content. */
 .sunny-widget {
   position: fixed !important;
-  left: 20px !important;
-  top: 50% !important;
+  left: 18px !important;
+  bottom: 18px !important;
   right: auto !important;
-  bottom: auto !important;
-  transform: translateY(-50%);
+  top: auto !important;
+  transform: none;
   z-index: 99999 !important;
   width: auto;
   height: auto;
@@ -514,24 +514,29 @@
 /* Keep the mascot launcher visible while scrolling */
 .sunny-launcher {
   position: relative;
+  width: 52px;
+  height: 52px;
   z-index: 2;
   flex-shrink: 0;
-  box-shadow:
-    0 8px 28px rgba(15, 48, 30, 0.28),
-    0 0 0 4px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 14px rgba(15, 48, 30, 0.2);
 }
 
-/* Put the chat panel beside the left-side mascot */
+.sunny-launcher > .sunny-mascot {
+  width: 46px;
+  height: 46px;
+}
+
+/* Show the chat panel above Sunny. */
 .sunny-panel {
-  position: fixed !important;
-  left: 88px !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 64px !important;
   right: auto !important;
-  top: 50% !important;
-  bottom: auto !important;
-  transform: translateY(-50%);
-  width: min(390px, calc(100vw - 112px)) !important;
-  max-height: min(680px, calc(100dvh - 32px)) !important;
-  height: min(650px, calc(100dvh - 32px));
+  top: auto !important;
+  transform: none;
+  width: min(390px, calc(100vw - 40px)) !important;
+  max-height: min(680px, calc(100dvh - 120px)) !important;
+  height: min(650px, calc(100dvh - 120px));
   display: flex;
   flex-direction: column;
   overflow: hidden !important;
@@ -643,26 +648,48 @@
   color: #245438 !important;
 }
 
-/* Mobile layout */
 @media (max-width: 520px) {
   .sunny-widget {
     left: 12px !important;
+    bottom: 14px !important;
+  }
+
+  .sunny-launcher {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sunny-launcher > .sunny-mascot {
+    width: 39px;
+    height: 39px;
+  }
+
+  .sunny-launcher-badge {
+    right: -2px;
+    top: -2px;
+    padding: 2px 4px;
+    font-size: 8px;
   }
 
   .sunny-panel {
-    left: 70px !important;
-    width: calc(100vw - 82px) !important;
-    max-height: calc(100dvh - 24px) !important;
-    height: min(650px, calc(100dvh - 24px));
+    position: fixed !important;
+    right: 10px !important;
+    bottom: 68px !important;
+    left: 10px !important;
+    width: auto !important;
+    height: min(600px, calc(100dvh - 84px));
+    min-height: 0;
+    max-height: calc(100dvh - 84px) !important;
     border-radius: 19px !important;
   }
 }
 
-/* Short screens: prevent the panel from exceeding the viewport */
+/* Short screens: keep the panel within the available height. */
 @media (max-height: 560px) {
   .sunny-panel {
-    max-height: calc(100dvh - 16px) !important;
-    height: calc(100dvh - 16px);
+    min-height: 0;
+    height: calc(100dvh - 84px);
+    max-height: calc(100dvh - 84px) !important;
   }
 }
 

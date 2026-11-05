@@ -14,6 +14,7 @@ import Solutions from "./solutions.jsx";
 import SolarSimulator from "./SolarSimulator.jsx";
 import SolarBackground from "./components/SolarBackground";
 import Products from "./Products";
+import PrivacyPolicy from "./PrivacyPolicy";
 import SiteFooter from "./components/SiteFooter";
 import SunnyChatbot from "./components/SunnyChatbot";
 import SolarPageLoader from "./components/SolarPageLoader";
@@ -35,6 +36,7 @@ function AppLayout() {
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/simulator" element={<SolarSimulator />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
 
       <SunnyChatbot />

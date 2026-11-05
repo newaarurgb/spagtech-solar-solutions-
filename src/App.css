@@ -1511,23 +1511,20 @@ main > section {
 
 
 /* =========================================
-   FIXED WHATSAPP BUTTON — RIGHT CENTER
+   FIXED WHATSAPP BUTTON — BOTTOM RIGHT
 ========================================= */
 
 .floating-whatsapp {
   position: fixed !important;
-
-  /* Keep it vertically centered on the right */
-  right: 22px !important;
-  top: 50% !important;
-  bottom: auto !important;
+  right: 18px !important;
+  bottom: 18px !important;
   left: auto !important;
-
-  transform: translateY(-50%);
+  top: auto !important;
+  transform: none;
   z-index: 99999;
 
-  width: 62px;
-  height: 62px;
+  width: 52px;
+  height: 52px;
   box-sizing: border-box;
 
   display: flex;
@@ -1552,8 +1549,8 @@ main > section {
 
 .whatsapp-logo {
   display: block;
-  width: 34px;
-  height: 34px;
+  width: 26px;
+  height: 26px;
   color: #ffffff;
   flex-shrink: 0;
 }
@@ -1603,17 +1600,16 @@ main > section {
 /* Mobile screens */
 @media (max-width: 600px) {
   .floating-whatsapp {
-    right: 14px !important;
-    top: 50% !important;
-    bottom: auto !important;
-
-    width: 54px;
-    height: 54px;
+    right: 12px !important;
+    top: auto !important;
+    bottom: 14px !important;
+    width: 44px;
+    height: 44px;
   }
 
   .whatsapp-logo {
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
   }
 
   .whatsapp-tooltip {
@@ -1633,12 +1629,11 @@ main > section {
   isolation: isolate;
   overflow: visible;
 
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
 
   box-shadow:
-    0 0 8px rgba(37, 211, 102, 0.9),
-    0 0 18px rgba(37, 211, 102, 0.75),
-    0 0 32px rgba(37, 211, 102, 0.5);
+    0 0 5px rgba(37, 211, 102, 0.65),
+    0 0 12px rgba(37, 211, 102, 0.4);
 
   animation: whatsapp-neon-glow 2s ease-in-out infinite;
 }
@@ -1647,9 +1642,9 @@ main > section {
 .floating-whatsapp::before {
   content: "";
   position: absolute;
-  inset: -7px;
+  inset: -4px;
 
-  border: 2px solid rgba(37, 211, 102, 0.9);
+  border: 1px solid rgba(37, 211, 102, 0.65);
   border-radius: 50%;
 
   box-shadow:
@@ -1666,9 +1661,9 @@ main > section {
 .floating-whatsapp::after {
   content: "";
   position: absolute;
-  inset: -12px;
+  inset: -7px;
 
-  border: 2px solid rgba(37, 211, 102, 0.45);
+  border: 1px solid rgba(37, 211, 102, 0.3);
   border-radius: 50%;
 
   pointer-events: none;
@@ -1680,16 +1675,14 @@ main > section {
 @keyframes whatsapp-neon-glow {
   0%, 100% {
     box-shadow:
-      0 0 6px rgba(37, 211, 102, 0.7),
-      0 0 15px rgba(37, 211, 102, 0.55),
-      0 0 25px rgba(37, 211, 102, 0.35);
+      0 0 4px rgba(37, 211, 102, 0.55),
+      0 0 9px rgba(37, 211, 102, 0.35);
   }
 
   50% {
     box-shadow:
-      0 0 12px rgba(37, 211, 102, 1),
-      0 0 28px rgba(37, 211, 102, 0.9),
-      0 0 45px rgba(37, 211, 102, 0.65);
+      0 0 7px rgba(37, 211, 102, 0.8),
+      0 0 14px rgba(37, 211, 102, 0.5);
   }
 }
 
@@ -1722,9 +1715,8 @@ main > section {
   background: #1fbd5a;
 
   box-shadow:
-    0 0 12px #25d366,
-    0 0 30px rgba(37, 211, 102, 1),
-    0 0 50px rgba(37, 211, 102, 0.7);
+    0 0 7px #25d366,
+    0 0 15px rgba(37, 211, 102, 0.65);
 }
 
 /* Accessibility */
@@ -2362,4 +2354,3 @@ main > section {
     text-align: center;
   }
 }
-
