@@ -71,7 +71,9 @@ export default function SiteFooter() {
 
       <div className="site-footer-bottom">
         <span>© 2026 SPAGTECH Solar Solutions</span>
-        <Link to="/privacy-policy">Privacy policy</Link>
+        <div className="site-footer-legal-links">
+          <Link to="/privacy-policy">Privacy policy</Link>
+        </div>
       </div>
     </footer>
   );

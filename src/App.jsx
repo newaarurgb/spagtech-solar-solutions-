@@ -342,12 +342,13 @@ const heroImages = [
           </a>
 
           <a
-            className="nav-cta"
             href={whatsappLink(
-              "Hello SPAGTECH! I would like to request a solar installation quote."
+              "Hello SPAGTECH! I would like to request a quotation for a solar installation. Please let me know what details you need."
             )}
+            className="nav-cta"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
           >
             Get a Quote <ArrowUpRight size={17} />
           </a>
@@ -400,10 +401,10 @@ const heroImages = [
 
             <div className="hero-actions">
               <a
-                className="button button-primary"
                 href={whatsappLink(
-                  "Hello SPAGTECH! I would like to request a solar installation quote."
+                  "Hello SPAGTECH! I would like to request a quotation for a solar installation. Please let me know what details you need."
                 )}
+                className="button button-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >

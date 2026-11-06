@@ -2531,52 +2531,6 @@ main > section {
   height: 25px !important;
 }
 
-.sunny-widget {
-  position: fixed !important;
-  top: auto !important;
-  right: auto !important;
-  bottom: max(16px, env(safe-area-inset-bottom)) !important;
-  left: max(16px, env(safe-area-inset-left)) !important;
-  z-index: 10000 !important;
-  transform: none !important;
-}
-
-.sunny-launcher {
-  width: 48px !important;
-  height: 48px !important;
-  box-shadow: none !important;
-  transform: none !important;
-  transition: background-color 160ms ease !important;
-}
-
-.sunny-launcher:hover {
-  box-shadow: none !important;
-  transform: none !important;
-}
-
-.sunny-launcher > .sunny-mascot {
-  width: 40px !important;
-  height: 40px !important;
-  animation: none !important;
-}
-
-.sunny-launcher .sunny-rays {
-  animation: none !important;
-}
-
-.sunny-launcher-badge {
-  top: -3px;
-  right: -3px;
-  padding: 2px 4px;
-  font-size: 8px;
-}
-
-.sunny-panel {
-  bottom: 60px !important;
-  left: 0 !important;
-  right: auto !important;
-}
-
 @media (max-width: 600px) {
   .floating-whatsapp {
     right: max(12px, env(safe-area-inset-right)) !important;
@@ -2590,24 +2544,6 @@ main > section {
     height: 23px !important;
   }
 
-  .sunny-widget {
-    bottom: max(12px, env(safe-area-inset-bottom)) !important;
-    left: max(12px, env(safe-area-inset-left)) !important;
-  }
-
-  .sunny-launcher {
-    width: 44px !important;
-    height: 44px !important;
-  }
-
-  .sunny-launcher > .sunny-mascot {
-    width: 37px !important;
-    height: 37px !important;
-  }
-
-  .sunny-panel {
-    bottom: 56px !important;
-  }
 }
 
 /* Keep the contact controls attached to the screen edges, centered vertically. */
